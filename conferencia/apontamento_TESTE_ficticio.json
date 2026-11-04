@@ -1,0 +1,1904 @@
+{
+ "formato": "simulador-apontamento/1",
+ "nome": "TESTE FICTÍCIO — 12 turnos da Linha T",
+ "ficticio": true,
+ "linha": "modelos/linha_T_transfer_FICTICIA.json",
+ "troca_inclui_esvaziar_encher": "nao",
+ "obs": "Gerado por conferencia/gerar_apontamento_ficticio.mjs a partir de uma linha simulada — só para testar a validação.",
+ "turnos": [
+  {
+   "id": "T1",
+   "data": "2026-01-05",
+   "turno": "1º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5097,
+   "refugo": 16,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T2",
+   "data": "2026-01-06",
+   "turno": "2º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5720,
+   "refugo": 13,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T3",
+   "data": "2026-01-07",
+   "turno": "1º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5352,
+   "refugo": 14,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T4",
+   "data": "2026-01-08",
+   "turno": "2º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5632,
+   "refugo": 14,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T5",
+   "data": "2026-01-09",
+   "turno": "1º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5262,
+   "refugo": 11,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T6",
+   "data": "2026-01-10",
+   "turno": "2º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5331,
+   "refugo": 14,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T7",
+   "data": "2026-01-11",
+   "turno": "1º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5229,
+   "refugo": 11,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T8",
+   "data": "2026-01-12",
+   "turno": "2º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5713,
+   "refugo": 11,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T9",
+   "data": "2026-01-13",
+   "turno": "1º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 4966,
+   "refugo": 11,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T10",
+   "data": "2026-01-14",
+   "turno": "2º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 4580,
+   "refugo": 14,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T11",
+   "data": "2026-01-15",
+   "turno": "1º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "nao",
+   "pecas_boas": 5304,
+   "refugo": 12,
+   "usar": "sim",
+   "obs": ""
+  },
+  {
+   "id": "T12",
+   "data": "2026-01-16",
+   "turno": "2º",
+   "minutos_disponiveis": 420,
+   "comecou_cheia": "sim",
+   "pecas_boas": 5215,
+   "refugo": 15,
+   "usar": "sim",
+   "obs": ""
+  }
+ ],
+ "paradas": [
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.7,
+   "inicio_min": 29.11,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.98,
+   "inicio_min": 43.05,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.76,
+   "inicio_min": 54.64,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.42,
+   "inicio_min": 56.4,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.3,
+   "inicio_min": 66.24,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "quebra",
+   "equipamento": "prensa_2",
+   "min": 20.83,
+   "inicio_min": 77.26,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.41,
+   "inicio_min": 99.67,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.18,
+   "inicio_min": 122.99,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "quebra",
+   "equipamento": "prensa_1",
+   "min": 3.53,
+   "inicio_min": 140.4,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.48,
+   "inicio_min": 156.82,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 4.72,
+   "inicio_min": 160.81,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 166.92,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.69,
+   "inicio_min": 202.49,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.78,
+   "inicio_min": 220.32,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.2,
+   "inicio_min": 269.67,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.11,
+   "inicio_min": 286.25,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.48,
+   "inicio_min": 309.75,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "quebra",
+   "equipamento": "prensa_5",
+   "min": 7.17,
+   "inicio_min": 323.36,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.79,
+   "inicio_min": 340.87,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.18,
+   "inicio_min": 345.75,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.53,
+   "inicio_min": 368.56,
+   "obs": ""
+  },
+  {
+   "turno": "T1",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 388.72,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.18,
+   "inicio_min": 3.56,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.99,
+   "inicio_min": 65.51,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.69,
+   "inicio_min": 71.2,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.22,
+   "inicio_min": 105.36,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.06,
+   "inicio_min": 114.65,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.01,
+   "inicio_min": 135.28,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "quebra",
+   "equipamento": "prensa_4",
+   "min": 14.44,
+   "inicio_min": 150.92,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.28,
+   "inicio_min": 172.71,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 195.31,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.51,
+   "inicio_min": 259.79,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.16,
+   "inicio_min": 267.36,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "quebra",
+   "equipamento": "transfer",
+   "min": 26.52,
+   "inicio_min": 272.31,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.3,
+   "inicio_min": 326.05,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.26,
+   "inicio_min": 373.34,
+   "obs": ""
+  },
+  {
+   "turno": "T2",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.65,
+   "inicio_min": 380.52,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 9.62,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.91,
+   "inicio_min": 37.92,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "quebra",
+   "equipamento": "prensa_4",
+   "min": 8.31,
+   "inicio_min": 86.22,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.86,
+   "inicio_min": 96.84,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.4,
+   "inicio_min": 129.95,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.68,
+   "inicio_min": 136.4,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "quebra",
+   "equipamento": "prensa_2",
+   "min": 9.36,
+   "inicio_min": 143.91,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.84,
+   "inicio_min": 163.03,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.72,
+   "inicio_min": 165.65,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.36,
+   "inicio_min": 184.04,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.6,
+   "inicio_min": 189.15,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.33,
+   "inicio_min": 195.25,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.21,
+   "inicio_min": 214.59,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 244.01,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.41,
+   "inicio_min": 281.69,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 3.63,
+   "inicio_min": 283.27,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "quebra",
+   "equipamento": "prensa_3",
+   "min": 12.07,
+   "inicio_min": 327.15,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.4,
+   "inicio_min": 344.05,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.19,
+   "inicio_min": 401.77,
+   "obs": ""
+  },
+  {
+   "turno": "T3",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.78,
+   "inicio_min": 417.22,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 0.35,
+   "inicio_min": 0,
+   "obs": "continuação do turno anterior"
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.47,
+   "inicio_min": 15.21,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.59,
+   "inicio_min": 31.41,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.7,
+   "inicio_min": 44.16,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.39,
+   "inicio_min": 49.91,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 53.76,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "quebra",
+   "equipamento": "prensa_1",
+   "min": 12.62,
+   "inicio_min": 84.53,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.98,
+   "inicio_min": 124.22,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "quebra",
+   "equipamento": "prensa_7",
+   "min": 2.42,
+   "inicio_min": 137.2,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.13,
+   "inicio_min": 152.02,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.82,
+   "inicio_min": 196.36,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.01,
+   "inicio_min": 205.51,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "quebra",
+   "equipamento": "transfer",
+   "min": 2.76,
+   "inicio_min": 225.25,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 277.17,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.9,
+   "inicio_min": 306.22,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.64,
+   "inicio_min": 310.12,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.07,
+   "inicio_min": 361.17,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.29,
+   "inicio_min": 387.01,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.45,
+   "inicio_min": 400.46,
+   "obs": ""
+  },
+  {
+   "turno": "T4",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.81,
+   "inicio_min": 408.19,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "quebra",
+   "equipamento": "prensa_6",
+   "min": 1.65,
+   "inicio_min": 65.09,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 66.73,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.22,
+   "inicio_min": 114.38,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.84,
+   "inicio_min": 154.88,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.81,
+   "inicio_min": 169.59,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.88,
+   "inicio_min": 179.64,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.48,
+   "inicio_min": 194.62,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.26,
+   "inicio_min": 199.18,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.75,
+   "inicio_min": 214.82,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "quebra",
+   "equipamento": "prensa_8",
+   "min": 11.86,
+   "inicio_min": 236.68,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.11,
+   "inicio_min": 254.38,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "quebra",
+   "equipamento": "prensa_6",
+   "min": 21.6,
+   "inicio_min": 276.14,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 6.89,
+   "inicio_min": 310.93,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 323.15,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.38,
+   "inicio_min": 352.7,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.46,
+   "inicio_min": 359.28,
+   "obs": ""
+  },
+  {
+   "turno": "T5",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.29,
+   "inicio_min": 403.26,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.95,
+   "inicio_min": 10.48,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.14,
+   "inicio_min": 17.82,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.38,
+   "inicio_min": 75.63,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.96,
+   "inicio_min": 90.79,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.9,
+   "inicio_min": 102.19,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 114.53,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.18,
+   "inicio_min": 140.81,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.05,
+   "inicio_min": 150.29,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "quebra",
+   "equipamento": "prensa_7",
+   "min": 9.37,
+   "inicio_min": 157.94,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.39,
+   "inicio_min": 179.83,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "quebra",
+   "equipamento": "transfer",
+   "min": 2.35,
+   "inicio_min": 184.19,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.29,
+   "inicio_min": 204.05,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.92,
+   "inicio_min": 264.57,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.41,
+   "inicio_min": 295.17,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "quebra",
+   "equipamento": "prensa_1",
+   "min": 15.13,
+   "inicio_min": 307.82,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.94,
+   "inicio_min": 337.57,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.31,
+   "inicio_min": 352.29,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 361.67,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 2.82,
+   "inicio_min": 396.71,
+   "obs": ""
+  },
+  {
+   "turno": "T6",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.69,
+   "inicio_min": 407.59,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.26,
+   "inicio_min": 7.71,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "quebra",
+   "equipamento": "prensa_8",
+   "min": 3.3,
+   "inicio_min": 10.19,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "quebra",
+   "equipamento": "prensa_3",
+   "min": 0.42,
+   "inicio_min": 100.31,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "quebra",
+   "equipamento": "prensa_8",
+   "min": 8.52,
+   "inicio_min": 105.39,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 157.44,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.16,
+   "inicio_min": 208.04,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.61,
+   "inicio_min": 216.3,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.94,
+   "inicio_min": 231.31,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "quebra",
+   "equipamento": "prensa_2",
+   "min": 35.67,
+   "inicio_min": 259.19,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.65,
+   "inicio_min": 296.36,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 11.57,
+   "inicio_min": 306.99,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.37,
+   "inicio_min": 324.24,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.43,
+   "inicio_min": 336.93,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "quebra",
+   "equipamento": "prensa_2",
+   "min": 1.56,
+   "inicio_min": 341.6,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.04,
+   "inicio_min": 355.45,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "quebra",
+   "equipamento": "transfer",
+   "min": 10.7,
+   "inicio_min": 394.27,
+   "obs": ""
+  },
+  {
+   "turno": "T7",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.77,
+   "inicio_min": 407.51,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.27,
+   "inicio_min": 11.14,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 19.95,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.09,
+   "inicio_min": 178.96,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.13,
+   "inicio_min": 212.52,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 218.91,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.55,
+   "inicio_min": 267.86,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.7,
+   "inicio_min": 274.5,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.2,
+   "inicio_min": 287.07,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.91,
+   "inicio_min": 289.56,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 14.47,
+   "inicio_min": 300.26,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.62,
+   "inicio_min": 328.07,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.69,
+   "inicio_min": 336.76,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.52,
+   "inicio_min": 356.34,
+   "obs": ""
+  },
+  {
+   "turno": "T8",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.77,
+   "inicio_min": 360.53,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.36,
+   "inicio_min": 8.11,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.13,
+   "inicio_min": 22.32,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 36.63,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.71,
+   "inicio_min": 69.39,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.37,
+   "inicio_min": 96.46,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.41,
+   "inicio_min": 161.26,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "quebra",
+   "equipamento": "prensa_1",
+   "min": 60.79,
+   "inicio_min": 228.79,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 301.67,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.79,
+   "inicio_min": 347.12,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.58,
+   "inicio_min": 362.27,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.31,
+   "inicio_min": 374.05,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.55,
+   "inicio_min": 376.36,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "quebra",
+   "equipamento": "transfer",
+   "min": 0.86,
+   "inicio_min": 395.6,
+   "obs": ""
+  },
+  {
+   "turno": "T9",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.24,
+   "inicio_min": 412.77,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.81,
+   "inicio_min": 31.68,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.33,
+   "inicio_min": 60.41,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.67,
+   "inicio_min": 81.13,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.58,
+   "inicio_min": 88.14,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 101.15,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "quebra",
+   "equipamento": "prensa_2",
+   "min": 2.16,
+   "inicio_min": 152.74,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.76,
+   "inicio_min": 154.9,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.25,
+   "inicio_min": 183.49,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "quebra",
+   "equipamento": "prensa_4",
+   "min": 24.61,
+   "inicio_min": 194.11,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.05,
+   "inicio_min": 223.99,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.05,
+   "inicio_min": 229.73,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.58,
+   "inicio_min": 259.91,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "quebra",
+   "equipamento": "prensa_5",
+   "min": 5.44,
+   "inicio_min": 263.89,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.55,
+   "inicio_min": 283.55,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.48,
+   "inicio_min": 324.54,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 4.16,
+   "inicio_min": 327.77,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.22,
+   "inicio_min": 342.32,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "quebra",
+   "equipamento": "prensa_1",
+   "min": 39.98,
+   "inicio_min": 348.15,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.82,
+   "inicio_min": 391.78,
+   "obs": ""
+  },
+  {
+   "turno": "T10",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 24.84,
+   "inicio_min": 395.16,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 0.16,
+   "inicio_min": 0,
+   "obs": "continuação do turno anterior"
+  },
+  {
+   "turno": "T11",
+   "motivo": "quebra",
+   "equipamento": "transfer",
+   "min": 14.94,
+   "inicio_min": 24.6,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "quebra",
+   "equipamento": "prensa_3",
+   "min": 7.99,
+   "inicio_min": 41.34,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 12.78,
+   "inicio_min": 85.1,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.04,
+   "inicio_min": 114.47,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "quebra",
+   "equipamento": "prensa_7",
+   "min": 2.42,
+   "inicio_min": 121.96,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.08,
+   "inicio_min": 168.09,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.18,
+   "inicio_min": 198.34,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.02,
+   "inicio_min": 205.75,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 216.45,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.3,
+   "inicio_min": 257.91,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.62,
+   "inicio_min": 263.17,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.23,
+   "inicio_min": 274.27,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.79,
+   "inicio_min": 302.18,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.34,
+   "inicio_min": 316.03,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "quebra",
+   "equipamento": "prensa_2",
+   "min": 27.78,
+   "inicio_min": 325.5,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.03,
+   "inicio_min": 362.33,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.11,
+   "inicio_min": 392.75,
+   "obs": ""
+  },
+  {
+   "turno": "T11",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 0.02,
+   "inicio_min": 419.98,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.08,
+   "inicio_min": 0,
+   "obs": "continuação do turno anterior"
+  },
+  {
+   "turno": "T12",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 40.58,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.81,
+   "inicio_min": 81.43,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "quebra",
+   "equipamento": "prensa_6",
+   "min": 8.72,
+   "inicio_min": 110.22,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.8,
+   "inicio_min": 130.77,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "quebra",
+   "equipamento": "prensa_8",
+   "min": 8.6,
+   "inicio_min": 176.99,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.52,
+   "inicio_min": 230.39,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 3.4,
+   "inicio_min": 239.2,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.27,
+   "inicio_min": 256.92,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.67,
+   "inicio_min": 259.14,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "troca",
+   "equipamento": "outro",
+   "min": 25,
+   "inicio_min": 266.13,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.74,
+   "inicio_min": 307.93,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "quebra",
+   "equipamento": "destacker",
+   "min": 0.81,
+   "inicio_min": 322.05,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.84,
+   "inicio_min": 332.47,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.24,
+   "inicio_min": 341.7,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "quebra",
+   "equipamento": "prensa_6",
+   "min": 3.3,
+   "inicio_min": 346.91,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "quebra",
+   "equipamento": "prensa_4",
+   "min": 7.73,
+   "inicio_min": 357.65,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.41,
+   "inicio_min": 367.51,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.68,
+   "inicio_min": 374.48,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 2.9,
+   "inicio_min": 391.98,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "botoeira",
+   "equipamento": "outro",
+   "min": 1.98,
+   "inicio_min": 403.96,
+   "obs": ""
+  },
+  {
+   "turno": "T12",
+   "motivo": "quebra",
+   "equipamento": "prensa_7",
+   "min": 13.28,
+   "inicio_min": 406.72,
+   "obs": ""
+  }
+ ]
+}

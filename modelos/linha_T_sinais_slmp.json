@@ -1,0 +1,183 @@
+{
+  "formato": "simulador-sinais/1",
+  "nome": "Sinais da Linha T — CLP de mentira, SLMP Mitsubishi (FICTÍCIO)",
+  "linha": "modelos/linha_T_transfer_FICTICIA.json",
+  "conexao": {
+    "protocolo": "slmp",
+    "endereco_ip": "127.0.0.1",
+    "porta": 5021,
+    "unidade": 1,
+    "intervalo_ms": 100,
+    "tempo_max_ms": 1500
+  },
+  "sinais": [
+    {
+      "id": "situacao",
+      "nome": "Situação da linha (0 produzindo, 1 quebra, 2 botoeira, 3 troca de ferramenta, 4 faltou blank, 5 enchendo, 6 esvaziando)",
+      "tipo": "registro",
+      "endereco": "D100",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "comp_parada",
+      "nome": "Máquina quebrada (0 nenhuma, 1 transfer, 2 destacker, 3 = prensa 1 … 10 = prensa 8)",
+      "tipo": "registro",
+      "endereco": "D101",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "angulo_transfer",
+      "nome": "Ângulo do transfer (encoder do servo)",
+      "tipo": "registro",
+      "endereco": "D102",
+      "escala": 0.1,
+      "unidade": "°"
+    },
+    {
+      "id": "passo",
+      "nome": "Passo do ciclo (1 Y avança, 2 X avança, 3 Y recua, 4 X volta e golpe)",
+      "tipo": "registro",
+      "endereco": "D103",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "x_mm",
+      "nome": "Posição do eixo X",
+      "tipo": "registro",
+      "endereco": "D104",
+      "escala": 0.1,
+      "unidade": "mm"
+    },
+    {
+      "id": "y_mm",
+      "nome": "Posição do eixo Y",
+      "tipo": "registro",
+      "endereco": "D105",
+      "escala": 0.1,
+      "unidade": "mm"
+    },
+    {
+      "id": "golpes",
+      "nome": "Contador de golpes (ciclos completos)",
+      "tipo": "registro32",
+      "endereco": "D110",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "pecas_saida",
+      "nome": "Contador de peças que saíram da última prensa",
+      "tipo": "registro32",
+      "endereco": "D112",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "botoeiras",
+      "nome": "Contador de paradas pela botoeira da operadora",
+      "tipo": "registro",
+      "endereco": "D114",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "magazine_atual",
+      "nome": "Magazine em uso (0 = A, 1 = B)",
+      "tipo": "registro",
+      "endereco": "D115",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "blanks_mag_A",
+      "nome": "Blanks no magazine A",
+      "tipo": "registro",
+      "endereco": "D116",
+      "escala": 1,
+      "unidade": "peças"
+    },
+    {
+      "id": "blanks_mag_B",
+      "nome": "Blanks no magazine B",
+      "tipo": "registro",
+      "endereco": "D117",
+      "escala": 1,
+      "unidade": "peças"
+    },
+    {
+      "id": "em_ciclo",
+      "nome": "Transfer em ciclo",
+      "tipo": "bit",
+      "endereco": "M100",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_1",
+      "nome": "Prensa 1 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M101",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_2",
+      "nome": "Prensa 2 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M102",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_3",
+      "nome": "Prensa 3 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M103",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_4",
+      "nome": "Prensa 4 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M104",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_5",
+      "nome": "Prensa 5 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M105",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_6",
+      "nome": "Prensa 6 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M106",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_7",
+      "nome": "Prensa 7 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M107",
+      "escala": 1,
+      "unidade": ""
+    },
+    {
+      "id": "prensa_pms_8",
+      "nome": "Prensa 8 em PMS (0°)",
+      "tipo": "bit",
+      "endereco": "M108",
+      "escala": 1,
+      "unidade": ""
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+SIMULADOR DE LINHA — Fase 2 do Projeto Cursos Industriais
+=========================================================
+Plano aprovado em 03/11/2026: E:\Fabrica3Web\Plano_Simulador_de_Linha_Fase2_v2.docx
+Primeira demonstração: linha A — prensas em linha com destacker e transfer (números FICTÍCIOS).
+
+COMECE AQUI: ABRIR_PAINEL.bat — todos os .bat em botões, numa página só (black piano). Em qualquer página do simulador,
+a aba "Atalhos" na borda direita leva às outras. Os .bat continuam funcionando com duplo clique, como antes.
+
+PASTAS
+  modelos\      planilha modelo (o cliente preenche) e o arquivo da linha A já convertido
+  ferramentas\  programas: criar a planilha modelo e converter planilha -> arquivo da linha
+  motor\        o motor de eventos (simulador.js), o relatório em texto (rodar.mjs) e os testes (testes.mjs)
+  conferencia\  modelo independente em SimPy e a comparação com o motor
+  tela\         telas: 3D da linha A (index.html), 3D da linha transfer (transfer.html), formulários, cenários A × B
+  lib\three\    biblioteca 3D three.js r170 (gratuita, licença MIT), para abrir sem internet
+  docs\         explicação do formato do arquivo da linha (FORMATO_DA_LINHA.md) e do motor (MOTOR.md)
+  registros\    o que a ponte leu do CLP (um arquivo por vez que ligou)
+  privado\      DADOS REAIS da validação (linha real, apontamentos, relatórios) — nunca vai para vídeo, demonstração ou pacote
+  blender\      scripts do Blender, animações exportadas e cenas geradas;  videos\  vídeos;  unreal\  FBX para o Unreal
+  _reprovados\  cópias de versões antigas (nada é apagado)
+
+ALTERAR OS DADOS PELOS FORMULÁRIOS (etapa S1)
+  1. Dê duplo clique em ABRIR_FORMULARIOS.bat (ou arraste um arquivo da linha .json em cima dele).
+  2. Escolha o arquivo no alto da página. Todos os dados aparecem em formulários, parte por parte.
+  3. Cada mudança é conferida na hora; o que estiver errado fica vermelho e o Salvar só libera sem erro.
+  4. Salvar grava por cima e guarda a versão anterior em _reprovados\modelos. "Salvar como" cria outro arquivo.
+  Serve para a linha A (estações) e para a linha T (transfer de 8 prensas).
+
+COMO USAR A PLANILHA (etapa E1)
+  1. Copie modelos\Planilha_Linha_MODELO.xlsx com outro nome e preencha as células amarelas.
+  2. Arraste a planilha preenchida em cima de CONVERTER_PLANILHA.bat.
+  3. Se estiver tudo certo, aparece "Arquivo da linha gravado" e o .json fica ao lado da planilha.
+     Se não, aparece a lista do que corrigir (aba e linha).
+  Linha transfer: use modelos\Planilha_Linha_TRANSFER_MODELO.xlsx (o conversor reconhece pela aba Prensas).
+  Precisa do Python com o pacote openpyxl (pip install openpyxl).
+
+COMO SIMULAR (etapa E2)
+  1. Arraste o arquivo da linha (.json) em cima de SIMULAR.bat (sem arrastar, roda a linha A de exemplo).
+  2. O resultado aparece na tela e fica gravado ao lado: <nome>_resultado.json.
+  3. O relatório abre sozinho no navegador: <nome>_relatorio.html (Ctrl+P salva em PDF).
+  Linha transfer (simulador-linha/2): simula os dias de produção (peças boas, OEE, para onde vai o tempo, quebras,
+  botoeira, magazines) e mostra o ciclo do sincronismo, quem segura a linha e a carta de tempos.
+  TESTAR_MOTOR.bat confere: 14 contas (eventos) + 31 (sincronismo) + 26 (simulação transfer) + 15 (comunicação com o CLP) + 14 (validação, E6).
+  CONFERIR_SIMPY.bat compara o motor com o modelo independente em SimPy (precisa: pip install simpy; leva uns 2 minutos).
+  Precisa do Node.js (nodejs.org).
+
+VER EM 3D (etapa E4)
+  1. Dê duplo clique em ABRIR_TELA_3D.bat (ou arraste um arquivo da linha .json em cima dele).
+  2. Abre uma janela preta (o servidorzinho, só deste computador) e o navegador com a linha em 3D.
+  3. A tela roda o mesmo motor e reproduz o 1º dia evento por evento: máquinas com a cor do estado,
+     peças andando, magazines esvaziando, racks enchendo e a empilhadeira trocando.
+     Os números do painel da direita são da simulação inteira (os mesmos do relatório).
+  4. Botões: tocar/pausar (ou barra de espaço), velocidade 1x a 300x, barra do tempo, câmeras.
+     Mouse: botão esquerdo gira, direito arrasta, rodinha aproxima.
+  Para encerrar: feche a janela preta.
+
+  LINHA TRANSFER EM 3D (etapa S4): duplo clique em ABRIR_TELA_3D_TRANSFER.bat.
+  Reproduz o 1º dia da Linha T pelo movimento real: Y avança, X avança, Y recua, X volta enquanto as 8 prensas
+  golpeiam (martelo pelo ângulo 0° → 180° → 360°), destacker pondo o blank, peças andando até a mesa da operadora.
+  A faixa no alto mostra a situação da linha (produzindo, enchendo, quebra, botoeira, troca de ferramenta, faltou blank).
+  No canto: a carta de tempos do ciclo com cursor e o mostrador de 0 a 360° do transfer. Velocidade de 0,25× a 300×.
+
+AO VIVO COM O CLP — SÓ LEITURA (etapa S5)  · detalhes em docs\COMUNICACAO_CLP.md
+  O programa SÓ LÊ o CLP (Modbus TCP ou SLMP Mitsubishi); não existe função de escrita. Linha real só com autorização da empresa.
+  1. Para testar sem máquina: ABRIR_CLP_DE_MENTIRA.bat (um CLP de teste neste PC que roda a Linha T em tempo real).
+  2. ABRIR_TELA_3D_TRANSFER.bat → no alto, "Espelho do CLP" (o 3D segue o CLP) ou "Comparação" (real × modelo, desvio %).
+  3. Escolha o mapa de sinais (endereços do CLP; altera em ABRIR_FORMULARIOS.bat) e clique em Ligar.
+  4. Tudo o que foi lido fica gravado em registros\ (para a validação real, E6).
+
+PACOTE DE VISITA (etapa E8)  · detalhes em docs\PACOTE_VISITA.md
+  MONTAR_PACOTE_VISITA.bat → monta E:\SimuladorLinha_Visita (pasta nova, nunca por cima) só com o que é fictício e da demonstração.
+  Lá dentro: ABRIR_DEMONSTRACAO.bat = um clique, sem internet (página de entrada + CLP de mentira 5% mais lento).
+
+VALIDAÇÃO COM A LINHA REAL (etapa E6)  · detalhes em docs\VALIDACAO.md   · só com autorização da empresa
+  APONTAMENTO_REAL.bat     → formulário dos turnos e paradas reais (pasta privado). Botão "Validar com o simulador".
+                             Os tempos reais da linha: "Linha real" na lista de arquivos do formulário (privado\linha_real.json).
+  VALIDAR_LINHA_REAL.bat   → reprodução (mesmas paradas) + previsão (40 sementes). Meta: até ±5% em peças. Relatório na pasta privado.
+  VALIDAR_GRAVACAO_CLP.bat → a última gravação da ponte do CLP (registros) contra o simulador: ciclo golpe a golpe e peças.
+  Teste sem dado real: arraste conferencia\apontamento_TESTE_ficticio.json ou conferencia\gravacao_TESTE_ficticia.jsonl nos .bat.
+
+BLENDER E UNREAL (etapa S6)  · detalhes em docs\BLENDER_UNREAL.md
+  GERAR_VIDEO_BLENDER.bat  → a Linha T no Blender 5.1 com os tempos do simulador: cena (.blend), vídeo (.mp4) e FBX para o Unreal.
+  BLENDER_AO_VIVO.bat      → o Blender segue o CLP (ponte da S5, só leitura). Teste com o ABRIR_CLP_DE_MENTIRA.bat.
+  UNREAL_AO_VIVO.bat       → manda as posições para o Unreal 4.27 (plugin Remote Control API).
+  Seu PRENSAS TRANSFER1.blend não é aberto nem alterado: a cena é a Linha T genérica (fictícia), própria para o LinkedIn.
+
+CENÁRIOS A × B (etapa E5)
+  1. Duplo clique em ABRIR_CENARIOS.bat (abre a Linha T) ou arraste um arquivo da linha em cima dele.
+  2. À esquerda, todos os dados: coluna A (como está) e coluna B (digite o novo valor). O que mudou fica amarelo.
+  3. À direita, o resultado lado a lado, refeito a cada mudança: peças boas/dia, % da demanda, ritmo × takt, OEE,
+     ciclo do sincronismo, quem segura a linha (ou o gargalo), maior perda e para onde vai o tempo.
+  4. A e B usam as mesmas sementes (comparação justa). Escolha 1, 5, 10 ou 20 sementes no alto.
+  5. "Salvar B como…" grava o cenário B em modelos (para abrir no formulário ou no 3D). "Imprimir / PDF" tira o relatório.
+
+ETAPAS (ver o plano)
+  E1 modelo de dados  -> FEITO e aprovado (03/11)
+  E2 motor de eventos -> FEITO e aprovado (03/11)
+  E3 resultados, OEE e relatório -> FEITO e aprovado (03/11) — ciclo ideal (mínimo x nominal) fica para depois
+  E4 tela 3D -> FEITO (aparência fica para o final)
+  SINCRONISMO REAL (plano v3, aprovado 04/11): E:\Fabrica3Web\Plano_Simulador_de_Linha_Fase2_v3.docx
+  S1 dados da linha transfer + formulários -> FEITO e aprovado (04/11)
+  S2 motor de sincronismo -> FEITO e aprovado (04/11)
+  S3 simulação da linha transfer -> FEITO e aprovado (04/11)
+  S4 3D pelo movimento real -> FEITO e aprovado (04/11) — aparência fica para o final
+  E5 cenários A x B -> FEITO
+  S5 ponte ao vivo com o CLP (só leitura) -> FEITO (testado com o CLP de mentira; linha real pendente)
+  S6 Blender e Unreal -> FEITO, aguardando teste no seu PC (Blender testado aqui em modo texto; Unreal não testado)
+  E6 validação real -> FERRAMENTAS PRONTAS (testadas com dados fictícios); falta preencher os dados reais da linha
+  E7 vídeos -> NÃO FEITO (você pediu para não fazer agora, 04/11)
+  E8 pacote de visita -> FEITO (montado e testado do zero no seu PC)

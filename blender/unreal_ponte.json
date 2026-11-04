@@ -1,0 +1,11 @@
+{
+  "formato": "simulador-unreal/1",
+  "nome": "Ponte para o Unreal — Linha T (FICTÍCIA)",
+  "linha": "modelos/linha_T_transfer_FICTICIA.json",
+  "simulador": "http://localhost:8091",
+  "unreal": "http://localhost:30010",
+  "mapa_unreal": "/Game/SimuladorLinha/LinhaT.LinhaT",
+  "fonte": "simulacao",
+  "inicio_s": 900,
+  "atores": {}
+}

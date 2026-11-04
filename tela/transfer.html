@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulador de Linha — linha transfer em 3D</title>
+<!-- Simulador de Linha — etapa S4 (04/11/2026): linha TRANSFER em 3D pelo movimento real (sincronismo S2 + simulação S3). Abre pelo ABRIR_TELA_3D.bat. -->
+<script type="importmap">{ "imports": { "three": "../lib/three/three.module.min.js", "three/addons/": "../lib/three/addons/" } }</script>
+<style>
+:root{--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--marca:#f2b705;--painel:rgba(18,20,23,.86);--tx:#f0efec;--tx2:#b9b8b1}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:#1a1c1f;color:var(--tx);font:13px/1.35 Arial,Helvetica,sans-serif}
+#cena{position:fixed;inset:0;display:block;width:100%;height:100%}
+.caixa{position:fixed;background:var(--painel);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 12px;backdrop-filter:blur(4px)}
+#topo{top:12px;left:12px;max-width:min(520px,calc(100% - 24px))}
+#topo h1{margin:0;font-size:16px}#topo .sub{color:var(--tx2);font-size:12px;margin-top:2px}
+.selo{display:inline-block;background:var(--marca);color:#111;font-weight:bold;font-size:11px;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+#numeros{top:12px;right:12px;width:290px}
+#numeros .l{display:flex;justify-content:space-between;gap:10px;padding:2px 0}#numeros .l b{font-size:14px}
+#numeros h3{margin:8px 0 4px;font-size:11px;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em}
+.nao{color:#ff8a80}.sim{color:#7ee2a8}
+#legenda{bottom:84px;left:12px;display:flex;flex-wrap:wrap;gap:10px;font-size:12px}
+#legenda i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+#controles{bottom:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+button,.botao{font:inherit;font-weight:bold;color:var(--tx);background:#2b2f33;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:7px 11px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--marca);color:#111;border-color:var(--marca)}
+button:focus-visible{outline:2px solid var(--marca);outline-offset:2px}
+#tempo{flex:1;min-width:160px;accent-color:var(--marca)}
+#relogio{min-width:150px;text-align:right;font-variant-numeric:tabular-nums;color:var(--tx2)}
+.grupo{display:flex;gap:4px}
+.rotulo{position:fixed;transform:translate(-50%,-100%);pointer-events:none;background:rgba(18,20,23,.82);border-radius:6px;padding:3px 7px;font-size:11px;white-space:nowrap;border-left:4px solid #888}
+.rotulo b{display:block;font-size:12px}
+.rotulo.garg{outline:2px solid var(--marca)}.rotulo.garg span::after{content:" · gargalo";color:var(--marca);font-weight:bold}
+#aviso{top:50%;left:50%;transform:translate(-50%,-50%);font-size:14px;text-align:center;max-width:420px}
+input[type=file]{display:none}
+@media (max-width:760px){#numeros{top:104px;left:12px;right:12px;width:auto;font-size:11px;display:grid;grid-template-columns:1fr 1fr;column-gap:14px;padding:6px 10px}#numeros h3{grid-column:1/-1;margin:4px 0 2px}#numeros .l b{font-size:12px}#legenda{display:none}#topo{right:12px;max-width:none}#relogio{min-width:0;text-align:left}}
+#faixa{position:fixed;top:12px;left:50%;transform:translateX(-50%);padding:7px 16px;border-radius:8px;font-weight:bold;font-size:14px;letter-spacing:.03em;background:#2a78d6;color:#fff;max-width:calc(100% - 24px);text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+#carta{right:12px;bottom:84px;padding:8px 10px}#carta .titc{font-size:11px;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+#carta text{font:11px Arial,Helvetica,sans-serif;fill:#f0efec}
+@media (max-width:1350px){#faixa{top:150px;left:12px;transform:none}#comparacao{top:228px}}#topo{max-width:min(470px,calc(100% - 24px))}
+@media (max-width:760px){#carta{display:none}#faixa{top:auto;bottom:132px;font-size:12px}}
+#modos{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}#modos button{padding:5px 9px;font-size:12px}
+#ligacao{display:inline-flex;gap:6px}#ligacao select{font:inherit;font-size:12px;max-width:230px;background:#2b2f33;color:#f0efec;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:4px}
+#statusVivo{width:100%}#statusVivo.ok{color:#7ee2a8}#statusVivo.erro{color:#ff8a80}
+#comparacao{top:198px;left:12px;width:400px;max-height:calc(100% - 300px);overflow:auto}#comparacao h3{margin:0 0 6px;font-size:12px;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em}
+#comparacao table{width:100%;border-collapse:collapse;font-size:12px}#comparacao td,#comparacao th{padding:3px 4px;border-bottom:1px solid rgba(255,255,255,.08);text-align:right}#comparacao td:first-child,#comparacao th:first-child{text-align:left}
+#comparacao th{color:var(--tx2);font-weight:normal}#comparacao .ver{margin:8px 0;padding:6px 8px;border-radius:6px;font-weight:bold}#comparacao .ver.bom{background:rgba(27,175,122,.25)}#comparacao .ver.ruim{background:rgba(217,48,37,.3)}
+#comparacao button{margin-top:6px;padding:5px 9px;font-size:12px}
+</style>
+</head>
+<body>
+<canvas id="cena" aria-label="Linha de produção em 3D"></canvas>
+<div id="rotulos"></div>
+<div id="topo" class="caixa"><h1 id="titulo">Simulador de Linha</h1><div class="sub" id="subtitulo">carregando…</div>
+  <div id="modos"><div class="grupo" role="group" aria-label="Modo">
+    <button id="mSim" aria-pressed="true">Simulado</button><button id="mEsp" aria-pressed="false">Espelho do CLP</button><button id="mComp" aria-pressed="false">Comparação</button></div>
+    <span id="ligacao" hidden><select id="mapa" aria-label="Mapa de sinais do CLP"></select><button id="bLigar">Ligar</button></span>
+    <div id="statusVivo" class="sub"></div></div></div>
+<div id="comparacao" class="caixa" hidden aria-live="polite"><h3>Comparação: real (CLP) × modelo</h3><div id="compCorpo">esperando o CLP…</div><button id="bZerarComp">Zerar comparação</button></div>
+<div id="numeros" class="caixa" aria-live="polite">
+  <h3 id="tituloAgora">Agora (reprodução do dia 1)</h3>
+  <div class="l"><span>Ciclos</span><b id="nCiclos">0</b></div>
+  <div class="l"><span>Peças que saíram</span><b id="nSaidas">0</b></div>
+  <div class="l"><span>Botoeira (peça com defeito)</span><b id="nBot">0</b></div>
+  <div class="l"><span>Na mesa da operadora</span><b id="nMesa">0</b></div>
+  <h3>Resultado da simulação inteira</h3>
+  <div class="l"><span>Peças boas por dia</span><b id="rDia">—</b></div>
+  <div class="l"><span>Demanda</span><b id="rDem">—</b></div>
+  <div class="l"><span>Ritmo real × takt</span><b id="rRitmo">—</b></div>
+  <div class="l"><span>OEE da linha</span><b id="rOee">—</b></div>
+  <div class="l"><span>Ciclo (sincronismo)</span><b id="rCiclo">—</b></div>
+  <div class="l"><span>Quem segura o ciclo</span><b id="rSegura">—</b></div>
+</div>
+<div id="faixa" role="status"></div>
+<div id="carta" class="caixa" aria-label="Carta de tempos do ciclo atual"><div class="titc">Ciclo do transfer (CLP mestre)</div><svg id="cartaSvg" viewBox="0 0 320 92" width="320" height="92"></svg></div>
+<div id="legenda" class="caixa"></div>
+<div id="controles" class="caixa">
+  <button id="bTocar" aria-label="Tocar ou pausar">⏸ Pausar</button>
+  <div class="grupo" role="group" aria-label="Velocidade" id="velocidades"></div>
+  <input id="tempo" type="range" min="0" max="1000" value="0" aria-label="Momento do dia">
+  <span id="relogio">0 h 00 min</span>
+  <div class="grupo" role="group" aria-label="Câmera">
+    <button id="cGeral">Visão geral</button><button id="cGarg">Prensa que segura</button><button id="cDest">Destacker</button><button id="cMesa">Mesa</button><button id="cEmp">Empilhadeira</button>
+  </div>
+  <label class="botao" for="arquivo">Abrir outra linha…</label><input id="arquivo" type="file" accept=".json,application/json">
+</div>
+<div id="aviso" class="caixa" hidden></div>
+<script type="module" src="transfer.js"></script>
+</body>
+</html>

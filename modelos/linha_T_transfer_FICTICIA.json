@@ -1,0 +1,223 @@
+{
+  "formato": "simulador-linha/2",
+  "tipo_linha": "transfer",
+  "origem": "formulário",
+  "linha": {
+    "nome": "Linha T — transfer de 8 prensas (FICTÍCIA)",
+    "produto": "Suporte estampado (exemplo)",
+    "pecas_por_golpe": 1,
+    "demanda_pecas_dia": 13000,
+    "lote_pecas": 3000,
+    "setup_min": 25,
+    "dias_simulados": 5,
+    "semente": 1
+  },
+  "turnos": [
+    {
+      "nome": "1º turno",
+      "inicio": "06:00",
+      "fim": "14:00",
+      "pausa_min": 60,
+      "duracao_min": 480
+    },
+    {
+      "nome": "2º turno",
+      "inicio": "14:00",
+      "fim": "22:00",
+      "pausa_min": 60,
+      "duracao_min": 480
+    }
+  ],
+  "transfer": {
+    "id": "EST_Transfer",
+    "nome": "Transfer (CLP mestre, servo com encoder)",
+    "eixo_x": {
+      "curso_mm": 650,
+      "vel_mm_s": 1500,
+      "acel_mm_s2": 6000
+    },
+    "eixo_y": {
+      "curso_mm": 80,
+      "vel_mm_s": 600,
+      "acel_mm_s2": 6000
+    },
+    "confirmacao_s": 0.03,
+    "falhas": {
+      "mtbf_min": 480,
+      "mttr_min": 8
+    }
+  },
+  "interpress": {
+    "quantidade": 9,
+    "observacao": "1 na entrada, 7 entre as prensas, 1 na saída; os Y andam todos juntos"
+  },
+  "prensas": [
+    {
+      "ordem": 1,
+      "id": "EST_Prensa_1",
+      "nome": "Prensa 1 — embutimento",
+      "capacidade_t": 300,
+      "spm_volante": 32,
+      "curso_mm": 250,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 720,
+        "mttr_min": 18
+      },
+      "refugo_pct": 0.05
+    },
+    {
+      "ordem": 2,
+      "id": "EST_Prensa_2",
+      "nome": "Prensa 2 — reembutimento",
+      "capacidade_t": 250,
+      "spm_volante": 35,
+      "curso_mm": 200,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 900,
+        "mttr_min": 15
+      },
+      "refugo_pct": 0.03
+    },
+    {
+      "ordem": 3,
+      "id": "EST_Prensa_3",
+      "nome": "Prensa 3 — corte",
+      "capacidade_t": 200,
+      "spm_volante": 35,
+      "curso_mm": 200,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 900,
+        "mttr_min": 12
+      },
+      "refugo_pct": 0.03
+    },
+    {
+      "ordem": 4,
+      "id": "EST_Prensa_4",
+      "nome": "Prensa 4 — furação",
+      "capacidade_t": 200,
+      "spm_volante": 35,
+      "curso_mm": 200,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 1000,
+        "mttr_min": 12
+      },
+      "refugo_pct": 0.02
+    },
+    {
+      "ordem": 5,
+      "id": "EST_Prensa_5",
+      "nome": "Prensa 5 — dobra 1",
+      "capacidade_t": 160,
+      "spm_volante": 35,
+      "curso_mm": 180,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 1000,
+        "mttr_min": 10
+      },
+      "refugo_pct": 0.02
+    },
+    {
+      "ordem": 6,
+      "id": "EST_Prensa_6",
+      "nome": "Prensa 6 — dobra 2",
+      "capacidade_t": 160,
+      "spm_volante": 35,
+      "curso_mm": 180,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 1000,
+        "mttr_min": 10
+      },
+      "refugo_pct": 0.02
+    },
+    {
+      "ordem": 7,
+      "id": "EST_Prensa_7",
+      "nome": "Prensa 7 — calibração",
+      "capacidade_t": 160,
+      "spm_volante": 35,
+      "curso_mm": 180,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 1100,
+        "mttr_min": 10
+      },
+      "refugo_pct": 0.02
+    },
+    {
+      "ordem": 8,
+      "id": "EST_Prensa_8",
+      "nome": "Prensa 8 — corte final",
+      "capacidade_t": 160,
+      "spm_volante": 35,
+      "curso_mm": 180,
+      "embreagem_s": 0.08,
+      "freio_s": 0.12,
+      "falhas": {
+        "mtbf_min": 1000,
+        "mttr_min": 12
+      },
+      "refugo_pct": 0.03
+    }
+  ],
+  "destacker": {
+    "id": "EST_Destacker",
+    "nome": "Destacker (magazines A e B)",
+    "pega_s": {
+      "min": 1.6,
+      "mais_comum": 1.8,
+      "max": 2.4
+    },
+    "troca_magazine_s": 6,
+    "falhas": {
+      "mtbf_min": 300,
+      "mttr_min": 5
+    }
+  },
+  "abastecimento": {
+    "empilhadeiras": 1,
+    "entrada": {
+      "estacao": "EST_Destacker",
+      "pecas_por_pilha": 600,
+      "magazines": 2,
+      "chegada_empilhadeira_min": 6,
+      "troca_min": 5
+    },
+    "saida": null
+  },
+  "saida": {
+    "id": "EST_Saida",
+    "nome": "Esteira, mesa e operadora",
+    "esteira_s": 8,
+    "operadora": {
+      "tempo_peca_s": {
+        "min": 2.6,
+        "mais_comum": 3,
+        "max": 3.8
+      },
+      "acha_defeito_pct": 95,
+      "parada_botoeira_min": {
+        "min": 1,
+        "mais_comum": 2,
+        "max": 5
+      }
+    }
+  },
+  "calculado": {
+    "tempo_disponivel_dia_min": 840,
+    "takt_s": 3.877
+  }
+}

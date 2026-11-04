@@ -1,0 +1,15 @@
+# Simulador de Linha — o que NUNCA sobe para o GitHub
+privado/          # dados reais da validação (linha real, apontamentos, relatórios, nomes proibidos)
+registros/        # gravações da ponte do CLP
+_reprovados/      # versões anteriores (backups locais)
+videos/
+unreal/
+*.blend
+*.blend1
+*.fbx
+*.mp4
+blender/linha_T_animacao_*.json
+blender/linha_T_cena_*
+__pycache__/
+node/
+pacote.json

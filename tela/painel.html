@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulador de Linha — painel</title>
+<!-- Simulador de Linha — PAINEL (04/11/2026): todos os .bat em botões. Páginas abrem aqui; .bat rodam numa janela própria, só neste PC. -->
+<style>
+:root{--piano:#050607;--laca:#0c0d10;--laca2:#121418;--fio:rgba(255,255,255,.075);--fio2:rgba(255,255,255,.14);--brilho:rgba(255,255,255,.06);
+  --tx:#eef0f3;--tx2:#9aa1aa;--tx3:#6b727b;--ouro:#f2b705;--ouro2:rgba(242,183,5,.16);--ok:#35d07f;--nao:#ff6b5e;--azul:#6aa8ff}
+*{box-sizing:border-box}html,body{margin:0}
+body{min-height:100vh;color:var(--tx);font:15px/1.45 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(1100px 520px at 50% -260px,rgba(255,255,255,.085),transparent 70%),radial-gradient(900px 400px at 100% 0,rgba(242,183,5,.05),transparent 60%),var(--piano)}
+a{color:inherit}
+.topo{position:sticky;top:0;z-index:5;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,7,.92),rgba(5,6,7,.78));border-bottom:1px solid var(--fio)}
+.topo .in{max-width:1240px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.marca{display:flex;align-items:center;gap:12px;min-width:0}
+.marca .sel{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(145deg,#1b1d21,#08090b);box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px var(--fio),0 8px 22px -10px rgba(242,183,5,.5)}
+.marca h1{margin:0;font-size:18px;font-weight:650;letter-spacing:.01em}.marca small{display:block;color:var(--tx2);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.estados{margin-left:auto;display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border-radius:999px;font-size:12.5px;color:var(--tx2);background:linear-gradient(180deg,#111317,#0a0b0d);box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px var(--fio)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--tx3)}.chip.ok i{background:var(--ok);box-shadow:0 0 10px var(--ok)}.chip.nao i{background:var(--nao)}.chip b{color:var(--tx);font-weight:600}
+main{max-width:1240px;margin:0 auto;padding:8px 24px 56px}
+.intro{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin:26px 0 6px}
+.intro p{margin:0;color:var(--tx2);max-width:720px}
+.busca{position:relative}.busca input{width:260px;max-width:100%;height:38px;border-radius:10px;border:0;padding:0 12px 0 36px;color:var(--tx);font:inherit;font-size:14px;background:#0b0c0f;box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px var(--fio)}
+.busca input:focus{outline:none;box-shadow:0 0 0 1px var(--ouro),0 0 0 4px var(--ouro2)}.busca svg{position:absolute;left:11px;top:11px}
+section{margin-top:30px}
+section header{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--fio)}
+section h2{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:650}
+section header span{color:var(--tx3);font-size:13px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.cartao{position:relative;display:flex;flex-direction:column;gap:10px;min-height:148px;padding:16px 16px 14px;border-radius:14px;text-decoration:none;text-align:left;cursor:pointer;border:0;color:var(--tx);font:inherit;
+  background:linear-gradient(180deg,var(--laca2),var(--laca) 60%,#08090b);box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px var(--fio),0 18px 34px -22px rgba(0,0,0,.95);transition:transform .16s ease,box-shadow .16s ease}
+.cartao::before{content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.07),transparent 38%);opacity:.7}
+.cartao:hover,.cartao:focus-visible{transform:translateY(-2px);outline:none;box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px rgba(242,183,5,.55),0 0 0 5px var(--ouro2),0 24px 40px -22px rgba(0,0,0,1)}
+.cartao.destaque{box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px rgba(242,183,5,.35),0 18px 34px -22px rgba(0,0,0,.95)}
+.cartao .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(145deg,#1c1f24,#0a0b0d);box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px var(--fio)}
+.cartao:hover .ic,.cartao:focus-visible .ic{box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px rgba(242,183,5,.5),0 0 18px -4px rgba(242,183,5,.6)}
+.cartao b{font-size:15.5px;font-weight:620}.cartao .d{color:var(--tx2);font-size:13px}
+.cartao .pe{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11.5px;color:var(--tx3)}
+.cartao .pe code{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:11.5px/1 ui-monospace,Consolas,monospace;color:var(--tx2);padding:4px 7px;border-radius:6px;background:#0a0b0d;box-shadow:0 0 0 1px var(--fio)}
+.cartao .tipo{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;flex:none}.cartao .tipo i{width:6px;height:6px;border-radius:50%;background:var(--azul)}.cartao.bat .tipo i{background:var(--ouro)}
+.cartao .st{position:absolute;top:16px;right:16px;font-size:11.5px;color:var(--tx3);display:flex;align-items:center;gap:6px}.cartao .st i{width:7px;height:7px;border-radius:50%;background:var(--tx3)}
+.cartao .st.ok{color:var(--ok)}.cartao .st.ok i{background:var(--ok);box-shadow:0 0 8px var(--ok)}
+.cartao[aria-busy="true"] .ic{animation:pulsa 1s ease-in-out infinite}@keyframes pulsa{50%{box-shadow:0 0 0 1px var(--ouro),0 0 22px -2px var(--ouro)}}
+.vazio{display:none;color:var(--tx3);padding:20px 0}
+.rodape{margin-top:40px;padding-top:16px;border-top:1px solid var(--fio);color:var(--tx3);font-size:12.5px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.aviso{margin-top:18px;padding:12px 14px;border-radius:12px;color:#ffd7d2;background:rgba(255,107,94,.08);box-shadow:0 0 0 1px rgba(255,107,94,.3);display:none}
+#torrada{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;max-width:min(560px,calc(100vw - 32px));padding:12px 16px;border-radius:12px;font-size:14px;
+  background:linear-gradient(180deg,#16181c,#0b0c0e);box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px var(--fio2),0 20px 40px -12px #000;transition:.2s ease;z-index:20}
+#torrada.ve{opacity:1;transform:translate(-50%,0)}#torrada.erro{box-shadow:inset 0 1px 0 var(--brilho),0 0 0 1px rgba(255,107,94,.6),0 20px 40px -12px #000}
+@media (max-width:640px){.topo .in{padding:12px 16px}.estados{margin-left:0}main{padding:4px 16px 40px}.busca input{width:100%}.busca{width:100%}}
+@media (prefers-reduced-motion:reduce){.cartao,#torrada{transition:none}.cartao[aria-busy="true"] .ic{animation:none}}
+</style>
+</head>
+<body>
+<div class="topo"><div class="in">
+  <div class="marca"><div class="sel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f2b705" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></div>
+    <div><h1>Simulador de Linha</h1><small>Painel de controle</small></div></div>
+  <div class="estados" aria-live="polite">
+    <span class="chip" id="stServidor"><i></i>Servidor <b>neste PC</b></span>
+    <span class="chip" id="stClp"><i></i>CLP de mentira <b>—</b></span>
+    <span class="chip" id="stPonte"><i></i>Ponte <b>—</b></span>
+  </div>
+</div></div>
+<main>
+  <div class="intro">
+    <p>Tudo o que o projeto faz, num lugar só. As telas abrem aqui; os botões com <span style="color:var(--ouro)">●</span> rodam o .bat numa janela própria, como no duplo clique. Em qualquer página, a aba <b>Atalhos</b> na borda direita volta para cá.</p>
+    <label class="busca"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b727b" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="filtro" type="search" placeholder="Procurar (ex.: validar, 3D, CLP)" aria-label="Procurar no painel"></label>
+  </div>
+  <div class="aviso" id="aviso"></div>
+  <div id="grupos"></div>
+  <p class="vazio" id="vazio">Nada com esse nome.</p>
+  <div class="rodape"><span>Roda só neste PC, sem internet</span><span>CLP: só leitura (Modbus TCP e SLMP)</span><span>Dados reais só na pasta privado</span><span>Versões anteriores em _reprovados — nada é apagado</span></div>
+</main>
+<div id="torrada" role="status" aria-live="polite"></div>
+<script type="module">
+import { GRUPOS, ITENS, ICONES } from "./atalhos_lista.js";
+const $ = (id) => document.getElementById(id);
+const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const icone = (n, cor = "#f2b705") => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${cor}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${ICONES[n] || ICONES.painel}"/></svg>`;
+let estado = { bats: null, arquivos: {} };
+
+function desenhar() {
+  const q = $("filtro").value.trim().toLowerCase(), raiz = $("grupos"); raiz.innerHTML = ""; let total = 0;
+  for (const g of GRUPOS) {
+    const itens = ITENS.filter((it) => it.grupo === g.id)
+      .filter((it) => !(it.tipo === "bat" && estado.bats && !estado.bats.includes(it.bat)))       // .bat que não existe nesta pasta some
+      .filter((it) => !(it.precisa && estado.arquivos[it.precisa] === false))
+      .filter((it) => !q || (it.titulo + " " + it.desc + " " + (it.bat || "")).toLowerCase().includes(q));
+    if (!itens.length) continue; total += itens.length;
+    const s = document.createElement("section");
+    s.innerHTML = `<header><h2>${esc(g.titulo)}</h2><span>${esc(g.sub)}</span></header><div class="grade"></div>`;
+    for (const it of itens) {
+      const el = document.createElement(it.tipo === "pagina" ? "a" : "button");
+      el.className = "cartao " + it.tipo + (it.destaque ? " destaque" : "");
+      if (it.tipo === "pagina") el.href = it.href; else { el.type = "button"; el.onclick = () => rodar(it, el); }
+      el.innerHTML = `<span class="ic">${icone(it.icone, it.tipo === "bat" ? "#f2b705" : "#cfd5dc")}</span><b>${esc(it.titulo)}</b><span class="d">${esc(it.desc)}</span>
+        <span class="pe"><span class="tipo"><i></i>${it.tipo === "pagina" ? "Abre aqui" : "Roda o .bat"}</span>${it.bat ? `<code>${esc(it.bat)}</code>` : ""}</span>${it.status ? `<span class="st" data-status="${it.status}"><i></i><span></span></span>` : ""}`;
+      el.setAttribute("aria-label", it.titulo + " — " + it.desc + (it.tipo === "bat" ? " (roda " + it.bat + ")" : ""));
+      s.querySelector(".grade").appendChild(el);
+    }
+    raiz.appendChild(s);
+  }
+  $("vazio").style.display = total ? "none" : "block";
+  pintarStatus();
+}
+let tTorrada;
+function torrada(txt, erro) { const t = $("torrada"); t.textContent = txt; t.className = "ve" + (erro ? " erro" : ""); clearTimeout(tTorrada); tTorrada = setTimeout(() => (t.className = ""), 4200); }
+async function rodar(it, el) {
+  el.setAttribute("aria-busy", "true");
+  try {
+    const r = await fetch("/api/bat", { method: "POST", headers: { "Content-Type": "application/json", "X-Simulador": "painel" }, body: JSON.stringify({ nome: it.bat }) });
+    const j = await r.json().catch(() => ({ ok: false, erro: "resposta inválida do servidor" }));
+    if (j.ok) torrada(it.bat + " aberto numa janela própria."); else torrada("Não abriu: " + j.erro, true);
+  } catch { torrada("O servidor não respondeu. Abra pelo ABRIR_PAINEL.bat.", true); }
+  setTimeout(() => el.removeAttribute("aria-busy"), 1200);
+  setTimeout(atualizar, 2500);
+}
+function chip(id, ok, txt) { const c = $(id); c.className = "chip " + (ok == null ? "" : ok ? "ok" : "nao"); c.querySelector("b").textContent = txt; }
+let ultimo = null;
+function pintarStatus() {
+  if (!ultimo) return;
+  for (const s of document.querySelectorAll("[data-status]")) {
+    const k = s.dataset.status, v = k === "clp" ? ultimo.clp : k === "ponte" ? ultimo.ponte.ligada : !!ultimo.ultima_validacao;
+    s.className = "st" + (v ? " ok" : ""); s.querySelector("span").textContent = k === "clp" ? (v ? "ligado" : "desligado") : k === "ponte" ? (v ? "lendo" : "desligada") : (v ? "há relatório" : "nenhum ainda");
+  }
+}
+async function atualizar() {
+  try {
+    const j = await (await fetch("/api/painel", { cache: "no-store" })).json();
+    ultimo = j; const primeira = !estado.bats; estado = { bats: j.bats, arquivos: j.arquivos };
+    chip("stServidor", true, "neste PC");
+    chip("stClp", j.clp, j.clp ? "ligado" : "desligado");
+    chip("stPonte", j.ponte.ligada, j.ponte.ligada ? j.ponte.leituras.toLocaleString("pt-BR") + " leituras" : "desligada");
+    if (!j.windows) { $("aviso").style.display = "block"; $("aviso").textContent = "Os botões de .bat só funcionam no Windows (este servidor está em " + j.sistema + "). As telas abrem normalmente."; }
+    if (primeira) desenhar(); else pintarStatus();
+  } catch { chip("stServidor", false, "sem resposta"); }
+}
+$("filtro").oninput = desenhar;
+desenhar(); atualizar(); setInterval(atualizar, 3000);
+window.painelPronto = true;
+</script>
+</body>
+</html>

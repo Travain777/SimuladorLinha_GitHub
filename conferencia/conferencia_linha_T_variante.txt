@@ -1,0 +1,13 @@
+CONFERÊNCIA LINHA TRANSFER × SimPy — Linha T — variante: 1 magazine de 300 e operadora mais lenta (FICTÍCIA) — 40 sementes em cada
+==================================================================================================================================
+OK     Peças que saíram das prensas             motor   38176.72  SimPy   37887.70  diferença   +0.76% (limite 1.0% · ruído ±1.05%)
+OK     Peças boas                               motor   38094.25  SimPy   37806.00  diferença   +0.76% (limite 1.0% · ruído ±1.05%)
+OK     Paradas pela botoeira                    motor      65.88  SimPy      66.25  diferença   -0.57% (limite 5.0% · ruído ±5.86%)
+OK     Trocas de ferramenta                     motor      12.10  SimPy      12.07  diferença   +0.21% (limite 2.0% · ruído ±1.32%)
+OK     Minutos parada por quebra                motor     306.19  SimPy     330.09  diferença   -7.24% (limite 5.0% · ruído ±11.68%)
+OK     Minutos parada pela botoeira             motor     175.19  SimPy     175.93  diferença   -0.42% (limite 5.0% · ruído ±6.09%)
+OK     Minutos faltando blank                   motor    1260.88  SimPy    1249.02  diferença  +11.86 (limite 5.0 · ruído ±14.34)
+OK     Disponibilidade (pontos %)               motor      51.33  SimPy      51.03  diferença   +0.30 (limite 1.0 · ruído ±0.53)
+OK     OEE da linha (pontos %)                  motor      50.57  SimPy      50.18  diferença   +0.38 (limite 1.0 · ruído ±0.53)
+
+9 de 9 comparações dentro do limite.

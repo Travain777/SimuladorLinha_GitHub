@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulador de Linha — formulários</title>
+<!-- Simulador de Linha — etapa S1 (04/11/2026): formulários para alterar TODOS os dados do arquivo da linha. Abre pelo ABRIR_FORMULARIOS.bat. -->
+<style>
+:root{--marca:#f2b705;--escuro:#1e2226;--tx:#1f2328;--tx2:#5b6168;--linha:#d9dce0;--fundo:#f4f5f6;--branco:#fff;--erro:#c62828;--erro-f:#fdecea;--aviso:#8a5a00;--aviso-f:#fff6d5;--ok:#1b7a4a}
+*{box-sizing:border-box}html,body{margin:0}
+body{font:14px/1.4 Arial,Helvetica,sans-serif;color:var(--tx);background:var(--fundo)}
+header{position:sticky;top:0;z-index:5;background:var(--escuro);color:#fff;padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+header h1{font-size:16px;margin:0 12px 0 0;white-space:nowrap}
+header h1 small{display:block;font-weight:normal;color:#b9bec4;font-size:11px}
+select,input,button{font:inherit}
+header select{max-width:340px;padding:6px 8px;border-radius:6px;border:1px solid #555;background:#2b2f33;color:#fff}
+button{cursor:pointer;border-radius:7px;border:1px solid #c5c9ce;background:var(--branco);padding:7px 12px;font-weight:bold;color:var(--tx)}
+header button{background:#2b2f33;color:#fff;border-color:#555}
+header button.principal{background:var(--marca);color:#111;border-color:var(--marca)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--marca);outline-offset:1px}
+#estado{margin-left:auto;font-size:12px;color:#d6d9dc}
+#estado.sujo{color:var(--marca);font-weight:bold}
+.salvarcomo{display:none;gap:6px;align-items:center}
+.salvarcomo.aberto{display:flex}
+.salvarcomo input{padding:6px 8px;border-radius:6px;border:1px solid #555;width:240px}
+main{display:grid;grid-template-columns:230px minmax(0,1fr);gap:16px;max-width:1280px;margin:0 auto;padding:16px}main>div{min-width:0}
+nav{position:sticky;top:76px;align-self:start;background:var(--branco);border:1px solid var(--linha);border-radius:10px;padding:6px}
+nav a{display:flex;justify-content:space-between;gap:6px;padding:8px 10px;border-radius:7px;color:var(--tx);text-decoration:none}
+nav a:hover{background:#f0f1f2}
+nav a.ativo{background:#fff4cc;font-weight:bold}
+nav .cont{background:var(--erro);color:#fff;border-radius:10px;padding:0 7px;font-size:11px;line-height:18px}
+nav .cont.aviso{background:#c88a00}
+#resumo{margin-bottom:12px;position:sticky;top:78px;z-index:4;max-height:42vh;overflow:auto;border-radius:8px}#resumo:empty{display:none}
+.caixa-erro,.caixa-aviso,.caixa-ok{border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.caixa-erro{background:var(--erro-f);border:1px solid #f3b9b3}
+.caixa-aviso{background:var(--aviso-f);border:1px solid #f0d58a;color:#4d3800}
+.caixa-ok{background:#e8f6ee;border:1px solid #a9dcc0;color:#11482c}
+.caixa-erro ul,.caixa-aviso ul{margin:6px 0 0;padding-left:18px}
+.caixa-erro a,.caixa-aviso a{color:inherit}
+section{background:var(--branco);border:1px solid var(--linha);border-radius:10px;padding:14px 16px;margin-bottom:16px;scroll-margin-top:80px}
+section h2{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:8px}
+section h2::before{content:"";width:6px;height:18px;background:var(--marca);border-radius:2px}
+section .explica{color:var(--tx2);margin:0 0 12px;font-size:13px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px 16px}
+.campo label{display:block;font-weight:bold;font-size:13px;margin-bottom:3px}
+.campo .entrada{display:flex;align-items:stretch}
+.campo input,.campo select{width:100%;padding:7px 9px;border:1px solid #bfc4ca;border-radius:6px;background:#fffdf3}
+.campo input[readonly]{background:#f1f2f3;color:var(--tx2)}
+.campo .un{display:flex;align-items:center;padding:0 8px;border:1px solid #bfc4ca;border-left:0;border-radius:0 6px 6px 0;background:#f1f2f3;color:var(--tx2);font-size:12px;white-space:nowrap}
+.campo .entrada.com-un input{border-radius:6px 0 0 6px}
+.campo .ajuda{color:var(--tx2);font-size:12px;margin-top:3px}
+.campo .msg{color:var(--erro);font-size:12px;margin-top:3px}
+.campo.tem-erro input,.campo.tem-erro select,td.tem-erro input,td.tem-erro select{border-color:var(--erro);background:var(--erro-f)}
+td.tem-aviso input,.campo.tem-aviso input{border-color:#c88a00}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tri small{display:block;color:var(--tx2);font-size:11px;margin-bottom:2px}
+.falhas-liga{display:flex;align-items:center;gap:6px;font-weight:bold;font-size:13px;margin-bottom:6px}.campo .falhas-liga input{width:18px;height:18px;margin:0}
+.rolar{overflow-x:auto;border:1px solid var(--linha);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{padding:5px 6px;border-bottom:1px solid #eceef0;text-align:left;vertical-align:top}
+th{background:#f6f7f8;font-size:12px;color:var(--tx2);position:sticky;top:0}
+th span{display:block;font-weight:normal;font-size:11px}
+td input,td select{width:100%;min-width:64px;padding:6px 7px;border:1px solid #bfc4ca;border-radius:5px;background:#fffdf3}
+td.n{color:var(--tx2);font-weight:bold;width:28px;text-align:center;padding-top:11px}
+td.acoes{white-space:nowrap;width:1%}
+td.acoes button{padding:4px 7px;font-size:12px;margin-right:2px}
+.mais{margin-top:8px}
+.calc{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.calc div{background:#f6f7f8;border-radius:8px;padding:8px 12px}
+.calc b{display:block;font-size:16px}
+.ficticia{display:inline-block;background:var(--marca);color:#111;font-size:11px;font-weight:bold;border-radius:4px;padding:1px 6px;margin-left:6px}
+#aviso-servidor{display:none;max-width:1280px;margin:12px auto 0;padding:0 16px}
+@media (max-width:820px){header{position:static}#resumo{position:static;max-height:none}main{grid-template-columns:minmax(0,1fr)}.campo[style*='span 2']{grid-column:auto!important}.tri{grid-template-columns:1fr 1fr 1fr}nav{position:static;display:flex;flex-wrap:wrap}header select{max-width:100%}#estado{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Formulários da linha<small>Simulador de Linha · todos os dados podem ser alterados aqui</small></h1>
+  <label for="arquivo" style="font-size:12px;color:#b9bec4">Arquivo</label>
+  <select id="arquivo" aria-label="Arquivo da linha"></select>
+  <button id="bSalvar" class="principal">Salvar</button>
+  <button id="bSalvarComo">Salvar como…</button>
+  <span class="salvarcomo" id="caixaComo"><input id="nomeComo" placeholder="nome do novo arquivo" aria-label="Nome do novo arquivo"><button id="bComoOk" class="principal">Salvar</button><button id="bComoCancela">Cancelar</button></span>
+  <button id="bDesfazer">Desfazer alterações</button>
+  <button id="bBaixar">Baixar cópia</button>
+  <button id="bValidar" style="display:none">Validar com o simulador</button>
+  <a id="b3d" href="#" style="color:#fff;font-size:13px">Ver em 3D</a>
+  <span id="estado">carregando…</span>
+</header>
+<div id="aviso-servidor" class="caixa-erro"></div>
+<main>
+  <nav id="menu" aria-label="Partes do formulário"></nav>
+  <div>
+    <div id="resumo" aria-live="polite"></div>
+    <div id="secoes"></div>
+  </div>
+</main>
+<script type="module" src="formulario.js"></script>
+</body>
+</html>

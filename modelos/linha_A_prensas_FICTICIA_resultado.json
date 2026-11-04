@@ -1,0 +1,276 @@
+{
+  "formato": "resultado-simulador-linha/1",
+  "linha": "Linha A — prensas em linha (FICTÍCIA)",
+  "segundos_simulados": 252000,
+  "horas_simuladas": 70,
+  "dias_simulados": 5,
+  "golpes_saida": 41401,
+  "pecas_boas": 41401,
+  "pecas_por_hora": 591.4428571428572,
+  "pecas_por_dia": 8280.2,
+  "ciclo_real_s": 6.086809497355136,
+  "takt_s": 5.04,
+  "demanda_pecas_dia": 10000,
+  "refugo_pecas": 504,
+  "estoque_medio_golpes": 9.45479300188044,
+  "tempo_medio_na_linha_s": 57.059437033991806,
+  "trocas_ferramenta": 27,
+  "tempo_troca_ferramenta_s": 32400,
+  "empilhadeiras": {
+    "quantidade": 1,
+    "pedidos": 397,
+    "uso_pct": 76.66862948155774,
+    "espera_media_min": 2.0248457111048133,
+    "espera_max_min": 8.490530417226061
+  },
+  "golpes_soltos": 41917,
+  "oee_linha": {
+    "oee": 0.6900166666666667,
+    "ciclo_ideal_s": 4.2,
+    "qualidade": 0.9876899587279624,
+    "disponibilidade_gargalo": 0.845337970940893
+  },
+  "estacoes": [
+    {
+      "id": "EST_Destacker",
+      "nome": "Destacker (alimentador de blanks)",
+      "paralelas": 1,
+      "feitas": 41916,
+      "refugo": 0,
+      "pct": {
+        "produzindo": 68.74121505600601,
+        "faltou_peca": 0,
+        "bloqueada": 16.863277020108157,
+        "quebrada": 1.0653032342021322,
+        "troca_ferramenta": 13.330204689683693
+      },
+      "ciclo_ideal_s": 3.8,
+      "oee": {
+        "disponibilidade": 0.8560449207611418,
+        "desempenho": 0.7383568914872742,
+        "qualidade": 1,
+        "oee": 0.6320666666666667
+      },
+      "perdas_min": {
+        "bom": 2654.68,
+        "refugo": 0,
+        "ciclo_lento": 232.45103235225253,
+        "faltou_peca": 0,
+        "bloqueada": 708.2576348445426,
+        "quebrada": 44.74273583648956,
+        "troca_ferramenta": 559.8685969667151
+      }
+    },
+    {
+      "id": "EST_Lavadora",
+      "nome": "Lavadora e oleadeira",
+      "paralelas": 1,
+      "feitas": 41913,
+      "refugo": 0,
+      "pct": {
+        "produzindo": 60.98730417349767,
+        "faltou_peca": 1.2297787407889333,
+        "bloqueada": 24.1233813754487,
+        "quebrada": 0.4702158013715813,
+        "troca_ferramenta": 13.189319908893127
+      },
+      "ciclo_ideal_s": 3.5,
+      "oee": {
+        "disponibilidade": 0.863404642897353,
+        "desempenho": 0.6742203725550348,
+        "qualidade": 1,
+        "oee": 0.5821250000000001
+      },
+      "perdas_min": {
+        "bom": 2444.925,
+        "refugo": 0,
+        "ciclo_lento": 116.54177528690198,
+        "faltou_peca": 51.650707113135205,
+        "bloqueada": 1013.1820177688454,
+        "quebrada": 19.749063657606417,
+        "troca_ferramenta": 553.9514361735113
+      }
+    },
+    {
+      "id": "EST_Centralizador",
+      "nome": "Mesa centralizadora",
+      "paralelas": 1,
+      "feitas": 41911,
+      "refugo": 0,
+      "pct": {
+        "produzindo": 59.32645720005844,
+        "faltou_peca": 1.580691240826427,
+        "bloqueada": 24.811117324414614,
+        "quebrada": 1.186589622680705,
+        "troca_ferramenta": 13.095144612019807
+      },
+      "ciclo_ideal_s": 3.4,
+      "oee": {
+        "disponibilidade": 0.8571826576529948,
+        "desempenho": 0.659679553671961,
+        "qualidade": 1,
+        "oee": 0.5654658730158729
+      },
+      "perdas_min": {
+        "bom": 2374.9566666666665,
+        "refugo": 0,
+        "ciclo_lento": 116.75453573578804,
+        "faltou_peca": 66.38903211470993,
+        "bloqueada": 1042.0669276254137,
+        "quebrada": 49.8367641525896,
+        "troca_ferramenta": 549.9960737048318
+      }
+    },
+    {
+      "id": "EST_Prensa_1",
+      "nome": "Prensa 1 — embutimento",
+      "paralelas": 1,
+      "feitas": 41720,
+      "refugo": 190,
+      "pct": {
+        "produzindo": 73.17163853094912,
+        "faltou_peca": 2.785538879899077,
+        "bloqueada": 8.576619683241109,
+        "quebrada": 2.4181309723361046,
+        "troca_ferramenta": 13.048071933574592
+      },
+      "ciclo_ideal_s": 4.2,
+      "oee": {
+        "disponibilidade": 0.845337970940893,
+        "desempenho": 0.8262967286593588,
+        "qualidade": 0.9954664757814364,
+        "oee": 0.6953333333333334
+      },
+      "perdas_min": {
+        "bom": 2920.4,
+        "refugo": 13.3,
+        "ciclo_lento": 139.5088182998632,
+        "faltou_peca": 116.99263295576124,
+        "bloqueada": 360.2180266961266,
+        "quebrada": 101.56150083811639,
+        "troca_ferramenta": 548.0190212101329
+      }
+    },
+    {
+      "id": "EST_Prensa_2",
+      "nome": "Prensa 2 — corte",
+      "paralelas": 1,
+      "feitas": 41655,
+      "refugo": 64,
+      "pct": {
+        "produzindo": 68.9778032263346,
+        "faltou_peca": 9.37653323597457,
+        "bloqueada": 7.956856704418006,
+        "quebrada": 0.6661287567589805,
+        "troca_ferramenta": 13.022678076513843
+      },
+      "ciclo_ideal_s": 4,
+      "oee": {
+        "disponibilidade": 0.8631119316672717,
+        "desempenho": 0.7672311375966804,
+        "qualidade": 0.9984659267959443,
+        "oee": 0.6611904761904761
+      },
+      "perdas_min": {
+        "bom": 2777,
+        "refugo": 4.266666666666667,
+        "ciclo_lento": 115.80106883938667,
+        "faltou_peca": 393.8143959109319,
+        "bloqueada": 334.18798158555626,
+        "quebrada": 27.977407783877183,
+        "troca_ferramenta": 546.9524792135815
+      }
+    },
+    {
+      "id": "EST_Prensa_3",
+      "nome": "Prensa 3 — furação",
+      "paralelas": 1,
+      "feitas": 41570,
+      "refugo": 84,
+      "pct": {
+        "produzindo": 68.31448505163827,
+        "faltou_peca": 10.70289101984072,
+        "bloqueada": 6.813373589836888,
+        "quebrada": 1.183960440484339,
+        "troca_ferramenta": 12.985289898199783
+      },
+      "ciclo_ideal_s": 4,
+      "oee": {
+        "disponibilidade": 0.8583074966131587,
+        "desempenho": 0.7703236960920966,
+        "qualidade": 0.9979833869496327,
+        "oee": 0.6598412698412699
+      },
+      "perdas_min": {
+        "bom": 2771.3333333333335,
+        "refugo": 5.6,
+        "ciclo_lento": 92.27503883547372,
+        "faltou_peca": 449.52142283331034,
+        "bloqueada": 286.1616907731493,
+        "quebrada": 49.72633850034223,
+        "troca_ferramenta": 545.3821757243909
+      }
+    },
+    {
+      "id": "EST_Prensa_4",
+      "nome": "Prensa 4 — calibração",
+      "paralelas": 1,
+      "feitas": 41529,
+      "refugo": 40,
+      "pct": {
+        "produzindo": 68.18207093540492,
+        "faltou_peca": 12.104819970267934,
+        "bloqueada": 6.080759970031929,
+        "quebrada": 0.6866993561700853,
+        "troca_ferramenta": 12.945649768125135
+      },
+      "ciclo_ideal_s": 4,
+      "oee": {
+        "disponibilidade": 0.8636765087570478,
+        "desempenho": 0.7639728418397977,
+        "qualidade": 0.9990377444730448,
+        "oee": 0.6591904761904761
+      },
+      "perdas_min": {
+        "bom": 2768.6,
+        "refugo": 2.6666666666666665,
+        "ciclo_lento": 92.38031262034006,
+        "faltou_peca": 508.4024387512532,
+        "bloqueada": 255.39191874134102,
+        "quebrada": 28.84137295914358,
+        "troca_ferramenta": 543.7172902612557
+      }
+    },
+    {
+      "id": "EST_FimDeLinha",
+      "nome": "Fim de linha (inspeção e rack)",
+      "paralelas": 1,
+      "feitas": 41401,
+      "refugo": 126,
+      "pct": {
+        "produzindo": 71.94516440567472,
+        "faltou_peca": 8.987613779967583,
+        "bloqueada": 6.206179891816221,
+        "quebrada": 0,
+        "troca_ferramenta": 12.861041922541483
+      },
+      "ciclo_ideal_s": 3.9,
+      "oee": {
+        "disponibilidade": 0.8713895807745852,
+        "desempenho": 0.7375343658957669,
+        "qualidade": 0.9969658294603511,
+        "oee": 0.6407297619047618
+      },
+      "perdas_min": {
+        "bom": 2691.065,
+        "refugo": 8.19,
+        "ciclo_lento": 322.4419050383382,
+        "faltou_peca": 377.47977875863853,
+        "bloqueada": 260.6595554562813,
+        "quebrada": 0,
+        "troca_ferramenta": 540.1637607467422
+      }
+    }
+  ],
+  "gargalo": "EST_Prensa_1"
+}

@@ -1,0 +1,646 @@
+{
+  "formato": "resultado-transfer/1",
+  "linha": "Linha T — transfer de 8 prensas (FICTÍCIA)",
+  "sincronismo": {
+    "ciclo_s": 3.345,
+    "golpes_por_minuto": 17.937,
+    "pecas_por_minuto": 17.937,
+    "pecas_por_hora": 1076.233,
+    "segura": {
+      "id": "golpe",
+      "nome": "Golpe da Prensa 1 (a mais lenta)",
+      "tempo_s": 2.075,
+      "prensa": "EST_Prensa_1",
+      "empatadas": [
+        "EST_Prensa_1"
+      ]
+    },
+    "proximo": {
+      "id": "golpe",
+      "nome": "Golpe da Prensa 2",
+      "tempo_s": 1.914,
+      "prensa": "EST_Prensa_2"
+    },
+    "ganho_se_igualar_s": 0.161,
+    "ciclo_se_igualar_s": 3.184,
+    "gpm_se_igualar": 18.843,
+    "eixo_x": {
+      "tipo": "trapezoidal",
+      "tempo_s": 0.683,
+      "vel_pico_mm_s": 1500
+    },
+    "eixo_y": {
+      "tipo": "trapezoidal",
+      "tempo_s": 0.233,
+      "vel_pico_mm_s": 600
+    },
+    "passos": [
+      {
+        "n": 1,
+        "id": "y_avanca",
+        "nome": "Y avança (fingers encaixam)",
+        "mov_s": 0.233,
+        "inicio_s": 0,
+        "confirmacao_s": 0.03,
+        "tempo_s": 0.263,
+        "fim_s": 0.263,
+        "grau_inicio": 0,
+        "grau_fim": 28.341,
+        "pct": 7.872
+      },
+      {
+        "n": 2,
+        "id": "x_avanca",
+        "nome": "X avança (peças andam uma estação)",
+        "mov_s": 0.683,
+        "inicio_s": 0.263,
+        "confirmacao_s": 0.03,
+        "tempo_s": 0.713,
+        "fim_s": 0.977,
+        "grau_inicio": 28.341,
+        "grau_fim": 105.112,
+        "pct": 21.325
+      },
+      {
+        "n": 3,
+        "id": "y_recua",
+        "nome": "Y recua (fingers soltam)",
+        "mov_s": 0.233,
+        "inicio_s": 0.977,
+        "confirmacao_s": 0.03,
+        "tempo_s": 0.263,
+        "fim_s": 1.24,
+        "grau_inicio": 105.112,
+        "grau_fim": 133.453,
+        "pct": 7.872
+      },
+      {
+        "n": 4,
+        "id": "paralelo",
+        "nome": "X volta ‖ prensas golpeiam ‖ destacker",
+        "mov_s": 2.075,
+        "segura": "golpe",
+        "inicio_s": 1.24,
+        "confirmacao_s": 0.03,
+        "tempo_s": 2.105,
+        "fim_s": 3.345,
+        "grau_inicio": 133.453,
+        "grau_fim": 360,
+        "pct": 62.93
+      }
+    ],
+    "ramos": [
+      {
+        "id": "x_volta",
+        "nome": "X volta para zero",
+        "tempo_s": 0.683,
+        "folga_s": 1.392
+      },
+      {
+        "id": "golpe",
+        "nome": "Golpe da Prensa 1 (a mais lenta)",
+        "tempo_s": 2.075,
+        "prensa": "EST_Prensa_1",
+        "empatadas": [
+          "EST_Prensa_1"
+        ],
+        "folga_s": 0
+      },
+      {
+        "id": "destacker",
+        "nome": "Destacker põe o blank",
+        "tempo_s": 1.8,
+        "folga_s": 0.275
+      }
+    ],
+    "prensas": [
+      {
+        "id": "EST_Prensa_1",
+        "nome": "Prensa 1 — embutimento",
+        "golpe_s": 2.075,
+        "volta_s": 1.875,
+        "folga_s": 0
+      },
+      {
+        "id": "EST_Prensa_2",
+        "nome": "Prensa 2 — reembutimento",
+        "golpe_s": 1.914,
+        "volta_s": 1.714,
+        "folga_s": 0.161
+      },
+      {
+        "id": "EST_Prensa_3",
+        "nome": "Prensa 3 — corte",
+        "golpe_s": 1.914,
+        "volta_s": 1.714,
+        "folga_s": 0.161
+      },
+      {
+        "id": "EST_Prensa_4",
+        "nome": "Prensa 4 — furação",
+        "golpe_s": 1.914,
+        "volta_s": 1.714,
+        "folga_s": 0.161
+      },
+      {
+        "id": "EST_Prensa_5",
+        "nome": "Prensa 5 — dobra 1",
+        "golpe_s": 1.914,
+        "volta_s": 1.714,
+        "folga_s": 0.161
+      },
+      {
+        "id": "EST_Prensa_6",
+        "nome": "Prensa 6 — dobra 2",
+        "golpe_s": 1.914,
+        "volta_s": 1.714,
+        "folga_s": 0.161
+      },
+      {
+        "id": "EST_Prensa_7",
+        "nome": "Prensa 7 — calibração",
+        "golpe_s": 1.914,
+        "volta_s": 1.714,
+        "folga_s": 0.161
+      },
+      {
+        "id": "EST_Prensa_8",
+        "nome": "Prensa 8 — corte final",
+        "golpe_s": 1.914,
+        "volta_s": 1.714,
+        "folga_s": 0.161
+      }
+    ],
+    "carta": [
+      {
+        "recurso": "Eixo Y (interpress)",
+        "tipo": "y",
+        "rotulo": "avança",
+        "inicio_s": 0,
+        "fim_s": 0.233,
+        "dur_s": 0.233
+      },
+      {
+        "recurso": "Eixo Y (interpress)",
+        "tipo": "y",
+        "rotulo": "recua",
+        "inicio_s": 0.977,
+        "fim_s": 1.21,
+        "dur_s": 0.233
+      },
+      {
+        "recurso": "Eixo X (barra)",
+        "tipo": "x",
+        "rotulo": "avança",
+        "inicio_s": 0.263,
+        "fim_s": 0.947,
+        "dur_s": 0.683
+      },
+      {
+        "recurso": "Eixo X (barra)",
+        "tipo": "x",
+        "rotulo": "volta",
+        "inicio_s": 1.24,
+        "fim_s": 1.923,
+        "dur_s": 0.683
+      },
+      {
+        "recurso": "Prensa 1",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 1",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.258,
+        "dur_s": 0.938
+      },
+      {
+        "recurso": "Prensa 1",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.258,
+        "fim_s": 3.195,
+        "dur_s": 0.938
+      },
+      {
+        "recurso": "Prensa 1",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.195,
+        "fim_s": 3.315,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Prensa 2",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 2",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.177,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 2",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.177,
+        "fim_s": 3.034,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 2",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.034,
+        "fim_s": 3.154,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Prensa 3",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 3",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.177,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 3",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.177,
+        "fim_s": 3.034,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 3",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.034,
+        "fim_s": 3.154,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Prensa 4",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 4",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.177,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 4",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.177,
+        "fim_s": 3.034,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 4",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.034,
+        "fim_s": 3.154,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Prensa 5",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 5",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.177,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 5",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.177,
+        "fim_s": 3.034,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 5",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.034,
+        "fim_s": 3.154,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Prensa 6",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 6",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.177,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 6",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.177,
+        "fim_s": 3.034,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 6",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.034,
+        "fim_s": 3.154,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Prensa 7",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 7",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.177,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 7",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.177,
+        "fim_s": 3.034,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 7",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.034,
+        "fim_s": 3.154,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Prensa 8",
+        "tipo": "emb",
+        "rotulo": "embreagem",
+        "inicio_s": 1.24,
+        "fim_s": 1.32,
+        "dur_s": 0.08
+      },
+      {
+        "recurso": "Prensa 8",
+        "tipo": "desce",
+        "rotulo": "desce 0° → 180°",
+        "inicio_s": 1.32,
+        "fim_s": 2.177,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 8",
+        "tipo": "sobe",
+        "rotulo": "sobe 180° → 360°",
+        "inicio_s": 2.177,
+        "fim_s": 3.034,
+        "dur_s": 0.857
+      },
+      {
+        "recurso": "Prensa 8",
+        "tipo": "freio",
+        "rotulo": "freio (PMS)",
+        "inicio_s": 3.034,
+        "fim_s": 3.154,
+        "dur_s": 0.12
+      },
+      {
+        "recurso": "Destacker",
+        "tipo": "dest",
+        "rotulo": "pega e põe o blank",
+        "inicio_s": 1.24,
+        "fim_s": 3.04,
+        "dur_s": 1.8
+      },
+      {
+        "recurso": "Confirmações",
+        "tipo": "conf",
+        "rotulo": "confirma passo 1",
+        "inicio_s": 0.233,
+        "fim_s": 0.263,
+        "dur_s": 0.03
+      },
+      {
+        "recurso": "Confirmações",
+        "tipo": "conf",
+        "rotulo": "confirma passo 2",
+        "inicio_s": 0.947,
+        "fim_s": 0.977,
+        "dur_s": 0.03
+      },
+      {
+        "recurso": "Confirmações",
+        "tipo": "conf",
+        "rotulo": "confirma passo 3",
+        "inicio_s": 1.21,
+        "fim_s": 1.24,
+        "dur_s": 0.03
+      },
+      {
+        "recurso": "Confirmações",
+        "tipo": "conf",
+        "rotulo": "confirma passo 4",
+        "inicio_s": 3.315,
+        "fim_s": 3.345,
+        "dur_s": 0.03
+      }
+    ],
+    "enchimento": {
+      "posicoes": 17,
+      "ciclos": 17,
+      "tempo_s": 56.865
+    },
+    "destacker_variacao": {
+      "atrasa_pct": 22.005,
+      "ciclo_medio_s": 3.369,
+      "gpm_medio": 17.81,
+      "ciclo_pior_s": 3.67,
+      "limite_s": 2.075
+    },
+    "takt_s": 3.877,
+    "confirmacoes_s": 0.12
+  },
+  "simulacao": {
+    "formato": "resultado-transfer/1",
+    "linha": "Linha T — transfer de 8 prensas (FICTÍCIA)",
+    "segundos_simulados": 252000,
+    "horas_simuladas": 70,
+    "dias_simulados": 5,
+    "ciclo_nominal_s": 3.345,
+    "ciclo_ideal_s": 3.345,
+    "ciclos": 56087,
+    "ciclo_medio_s": 3.3763086980806403,
+    "golpes_saida": 55764,
+    "pecas_boas": 55662,
+    "pecas_por_dia": 11132.4,
+    "pecas_por_hora": 795.1714285714286,
+    "pecas_entregues": 55664,
+    "refugo_achado": 100,
+    "defeitos_passaram": 2,
+    "pecas_ruins_saida": 102,
+    "ritmo_real_s": 4.52732564406597,
+    "takt_s": 3.877,
+    "demanda_pecas_dia": 13000,
+    "oee": {
+      "disponibilidade": 0.751456452179559,
+      "desempenho": 0.9850214368893926,
+      "qualidade": 0.9981708629223155,
+      "oee": 0.7388467857142857,
+      "oee_direto": 0.7388467857142857
+    },
+    "perdas_min": {
+      "bom": 3103.156500000962,
+      "refugo": 5.68650000000001,
+      "ciclo_lento": 29.13653177994113,
+      "enchimento": 18.137567373215358,
+      "faltou_blank": 0,
+      "quebrada": 342.10045937365965,
+      "botoeira": 251.78244147219223,
+      "troca_ferramenta": 450
+    },
+    "quebras": [
+      {
+        "id": "EST_Transfer",
+        "nome": "Transfer (CLP mestre, servo com encoder)",
+        "falhas": 4,
+        "min": 45.82268953570431
+      },
+      {
+        "id": "EST_Destacker",
+        "nome": "Destacker (magazines A e B)",
+        "falhas": 10,
+        "min": 44.329335670140935
+      },
+      {
+        "id": "EST_Prensa_1",
+        "nome": "Prensa 1 — embutimento",
+        "falhas": 5,
+        "min": 45.354573038015225
+      },
+      {
+        "id": "EST_Prensa_2",
+        "nome": "Prensa 2 — reembutimento",
+        "falhas": 0,
+        "min": 0
+      },
+      {
+        "id": "EST_Prensa_3",
+        "nome": "Prensa 3 — corte",
+        "falhas": 2,
+        "min": 23.18830359191052
+      },
+      {
+        "id": "EST_Prensa_4",
+        "nome": "Prensa 4 — furação",
+        "falhas": 4,
+        "min": 131.37049350053428
+      },
+      {
+        "id": "EST_Prensa_5",
+        "nome": "Prensa 5 — dobra 1",
+        "falhas": 1,
+        "min": 0.7794599298399892
+      },
+      {
+        "id": "EST_Prensa_6",
+        "nome": "Prensa 6 — dobra 2",
+        "falhas": 3,
+        "min": 34.65485267756375
+      },
+      {
+        "id": "EST_Prensa_7",
+        "nome": "Prensa 7 — calibração",
+        "falhas": 4,
+        "min": 16.600751429950346
+      },
+      {
+        "id": "EST_Prensa_8",
+        "nome": "Prensa 8 — corte final",
+        "falhas": 0,
+        "min": 0
+      }
+    ],
+    "botoeira": {
+      "paradas": 100,
+      "min": 251.78244147219223
+    },
+    "trocas_ferramenta": 18,
+    "troca_min": 450,
+    "enchimento_min": 18.137567373215358,
+    "destacker": {
+      "atrasou_pct": 21.919517891846596,
+      "trocas_magazine": 74,
+      "faltou_blank_min": 0
+    },
+    "empilhadeira": {
+      "quantidade": 1,
+      "pedidos": 92,
+      "uso_pct": 24.095238095238095,
+      "espera_media_min": 0
+    },
+    "operadora": {
+      "ocupacao_pct": 69.3416998033118,
+      "mesa_max": 4,
+      "mesa_fim": 0,
+      "espera_media_s": 0.046183617883207226,
+      "empacotadas": 55662
+    },
+    "posicoes": 17
+  }
+}

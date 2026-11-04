@@ -1,0 +1,203 @@
+{
+  "formato": "simulador-linha/1",
+  "origem": "Planilha_Linha_MODELO.xlsx",
+  "linha": {
+    "nome": "Linha A — variante: 1 magazine, 1 rack (FICTÍCIA)",
+    "produto": "Painel lateral (exemplo)",
+    "pecas_por_golpe": 1,
+    "demanda_pecas_dia": 10000,
+    "lote_pecas": 1500,
+    "setup_min": 20.0,
+    "dias_simulados": 5,
+    "semente": 1
+  },
+  "turnos": [
+    {
+      "nome": "1º turno",
+      "inicio": "06:00",
+      "fim": "14:00",
+      "pausa_min": 60.0,
+      "duracao_min": 480
+    },
+    {
+      "nome": "2º turno",
+      "inicio": "14:00",
+      "fim": "22:00",
+      "pausa_min": 60.0,
+      "duracao_min": 480
+    }
+  ],
+  "estacoes": [
+    {
+      "ordem": 1,
+      "id": "EST_Destacker",
+      "nome": "Destacker (alimentador de blanks)",
+      "tipo": "alimentacao",
+      "ciclo_s": {
+        "min": 3.8,
+        "mais_comum": 4.0,
+        "max": 4.6
+      },
+      "paralelas": 1,
+      "estoque_depois": 2,
+      "falhas": {
+        "mtbf_min": 240.0,
+        "mttr_min": 6.0
+      },
+      "refugo_pct": 0.0,
+      "observacao": "2 magazines de pilha; troca pela empilhadeira (aba Abastecimento)"
+    },
+    {
+      "ordem": 2,
+      "id": "EST_Lavadora",
+      "nome": "Lavadora e oleadeira",
+      "tipo": "processo",
+      "ciclo_s": {
+        "min": 3.5,
+        "mais_comum": 3.6,
+        "max": 3.9
+      },
+      "paralelas": 1,
+      "estoque_depois": 1,
+      "falhas": {
+        "mtbf_min": 600.0,
+        "mttr_min": 10.0
+      },
+      "refugo_pct": 0.0,
+      "observacao": "Esteira contínua"
+    },
+    {
+      "ordem": 3,
+      "id": "EST_Centralizador",
+      "nome": "Mesa centralizadora",
+      "tipo": "processo",
+      "ciclo_s": {
+        "min": 3.4,
+        "mais_comum": 3.5,
+        "max": 3.8
+      },
+      "paralelas": 1,
+      "estoque_depois": 0,
+      "falhas": {
+        "mtbf_min": 480.0,
+        "mttr_min": 5.0
+      },
+      "refugo_pct": 0.0,
+      "observacao": ""
+    },
+    {
+      "ordem": 4,
+      "id": "EST_Prensa_1",
+      "nome": "Prensa 1 — embutimento",
+      "tipo": "processo",
+      "ciclo_s": {
+        "min": 4.2,
+        "mais_comum": 4.3,
+        "max": 4.7
+      },
+      "paralelas": 1,
+      "estoque_depois": 0,
+      "falhas": {
+        "mtbf_min": 300.0,
+        "mttr_min": 12.0
+      },
+      "refugo_pct": 0.5,
+      "observacao": "Ciclo inclui o transfer até a prensa 2"
+    },
+    {
+      "ordem": 5,
+      "id": "EST_Prensa_2",
+      "nome": "Prensa 2 — corte",
+      "tipo": "processo",
+      "ciclo_s": {
+        "min": 4.0,
+        "mais_comum": 4.1,
+        "max": 4.4
+      },
+      "paralelas": 1,
+      "estoque_depois": 0,
+      "falhas": {
+        "mtbf_min": 420.0,
+        "mttr_min": 10.0
+      },
+      "refugo_pct": 0.2,
+      "observacao": "Ciclo inclui o transfer"
+    },
+    {
+      "ordem": 6,
+      "id": "EST_Prensa_3",
+      "nome": "Prensa 3 — furação",
+      "tipo": "processo",
+      "ciclo_s": {
+        "min": 4.0,
+        "mais_comum": 4.1,
+        "max": 4.3
+      },
+      "paralelas": 1,
+      "estoque_depois": 0,
+      "falhas": {
+        "mtbf_min": 480.0,
+        "mttr_min": 9.0
+      },
+      "refugo_pct": 0.2,
+      "observacao": "Ciclo inclui o transfer"
+    },
+    {
+      "ordem": 7,
+      "id": "EST_Prensa_4",
+      "nome": "Prensa 4 — calibração",
+      "tipo": "processo",
+      "ciclo_s": {
+        "min": 4.0,
+        "mais_comum": 4.1,
+        "max": 4.3
+      },
+      "paralelas": 1,
+      "estoque_depois": 3,
+      "falhas": {
+        "mtbf_min": 500.0,
+        "mttr_min": 9.0
+      },
+      "refugo_pct": 0.1,
+      "observacao": "Esteira de saída com 3 peças"
+    },
+    {
+      "ordem": 8,
+      "id": "EST_FimDeLinha",
+      "nome": "Fim de linha (inspeção e rack)",
+      "tipo": "saida",
+      "ciclo_s": {
+        "min": 3.9,
+        "mais_comum": 4.2,
+        "max": 5.0
+      },
+      "paralelas": 1,
+      "estoque_depois": 0,
+      "falhas": null,
+      "refugo_pct": 0.3,
+      "observacao": "2 operadores; racks trocados pela empilhadeira"
+    }
+  ],
+  "abastecimento": {
+    "empilhadeiras": 1,
+    "entrada": {
+      "estacao": "EST_Destacker",
+      "pecas_por_pilha": 800,
+      "magazines": 1,
+      "chegada_empilhadeira_min": 5.0,
+      "troca_min": 4.0
+    },
+    "saida": {
+      "estacao": "EST_FimDeLinha",
+      "pecas_por_rack": 120,
+      "posicoes": 1,
+      "chegada_empilhadeira_min": 5.0,
+      "troca_min": 3.0
+    }
+  },
+  "calculado": {
+    "tempo_disponivel_dia_min": 840.0,
+    "takt_s": 5.04,
+    "estacoes_mais_lentas_que_o_takt": []
+  }
+}

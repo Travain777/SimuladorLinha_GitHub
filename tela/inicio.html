@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulador de Linha — demonstração</title>
+<!-- Simulador de Linha — etapa E8 (04/11/2026): página de entrada da demonstração (pacote de visita). Tudo roda neste PC, sem internet. -->
+<style>
+:root{--marca:#f2b705;--escuro:#1e2226;--tx:#1f2328;--tx2:#5b6168;--linha:#d9dce0;--fundo:#f4f5f6;--branco:#fff;--ok:#1b7a4a;--erro:#c62828}
+*{box-sizing:border-box}html,body{margin:0}
+body{font:15px/1.45 Arial,Helvetica,sans-serif;color:var(--tx);background:var(--fundo)}
+header{background:var(--escuro);color:#fff;padding:22px 0 20px;border-bottom:4px solid var(--marca)}
+header>div{max-width:1100px;margin:0 auto;padding:0 16px}header h1{margin:0;font-size:24px}header p{margin:6px 0 0;color:#c9cdd2;font-size:14px;max-width:760px}
+main{max-width:1100px;margin:0 auto;padding:18px 16px 40px}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--tx2);margin:22px 0 10px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+a.cartao{display:flex;flex-direction:column;gap:6px;background:var(--branco);border:1px solid var(--linha);border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none;min-height:132px}
+a.cartao:hover,a.cartao:focus-visible{border-color:var(--marca);box-shadow:0 0 0 3px rgba(242,183,5,.35);outline:none}
+a.cartao b{font-size:16px}a.cartao span{color:var(--tx2);font-size:13px}
+a.cartao i{font-style:normal;margin-top:auto;font-size:12px;font-weight:bold;color:#7a5c00}
+.estado{display:inline-flex;align-items:center;gap:6px;font-size:12px;margin-top:10px;color:#c9cdd2}
+.estado .p{width:9px;height:9px;border-radius:50%;background:#888}.estado.ok .p{background:#3ccf7e}.estado.nao .p{background:#e05a4f}
+.nota{font-size:12px;color:var(--tx2);margin-top:26px;border-top:1px solid var(--linha);padding-top:12px}
+</style>
+</head>
+<body>
+<header><div>
+  <h1>Simulador de Linha</h1>
+  <p>Linhas de prensas com o sincronismo real: tempo de cada eixo, golpe de cada prensa, falhas, trocas e OEE. Tudo roda neste computador, sem internet. Linhas e números desta demonstração são fictícios.</p>
+  <div class="estado" id="clp"><span class="p"></span><span id="clpTxt">procurando o CLP de mentira…</span></div>
+</div></header>
+<main>
+  <h2>Linha transfer (8 prensas, destacker e transfer)</h2>
+  <div class="grade">
+    <a class="cartao" href="transfer.html?linha=..%2Fmodelos%2Flinha_T_transfer_FICTICIA.json"><b>Linha em 3D — simulação</b><span>O ciclo de verdade: Y avança, X empurra, Y recua, as prensas golpeiam juntas. Quebras, botoeira e troca de ferramenta ao longo do dia.</span><i>Abrir →</i></a>
+    <a class="cartao" href="transfer.html?linha=..%2Fmodelos%2Flinha_T_transfer_FICTICIA.json&amp;modo=comparacao&amp;mapa=modelos%2Flinha_T_sinais_modbus.json"><b>Ao vivo com o CLP</b><span>O 3D segue um CLP (aqui, o CLP de mentira deste PC, 5% mais lento) e compara com a simulação. Só leitura. Clique em “Ligar” na tela.</span><i>Abrir →</i></a>
+    <a class="cartao" href="formulario.html?linha=modelos%2Flinha_T_transfer_FICTICIA.json"><b>Dados da linha</b><span>Todos os dados em formulário: eixos, prensas, destacker, saída, turnos, falhas. O ciclo é recalculado a cada mudança.</span><i>Abrir →</i></a>
+    <a class="cartao" href="cenarios.html?linha=..%2Fmodelos%2Flinha_T_transfer_FICTICIA.json"><b>Cenários A × B</b><span>Compare duas versões da linha com as mesmas sementes: o que muda em peças por dia, OEE e perdas.</span><i>Abrir →</i></a>
+    <a class="cartao" href="../modelos/linha_T_transfer_FICTICIA_relatorio.html"><b>Relatório da simulação</b><span>Ciclo, quem segura a linha, carta de tempos, OEE e perdas de 5 dias.</span><i>Abrir →</i></a>
+    <a class="cartao" href="../demo/validacao_exemplo_FICTICIO.html"><b>Validação (exemplo)</b><span>Como o simulador é comparado com a produção real: mesmas paradas, meta de 5%. Exemplo com dados gerados por simulação.</span><i>Abrir →</i></a>
+  </div>
+  <h2>Linha de estações</h2>
+  <div class="grade">
+    <a class="cartao" href="index.html?linha=..%2Fmodelos%2Flinha_A_prensas_FICTICIA.json"><b>Linha A em 3D</b><span>Prensas em linha com estoques entre elas, falhas e empilhadeira.</span><i>Abrir →</i></a>
+    <a class="cartao" href="../modelos/linha_A_prensas_FICTICIA_relatorio.html"><b>Relatório da Linha A</b><span>Produção, gargalo, OEE e perdas por estação.</span><i>Abrir →</i></a>
+  </div>
+  <p class="nota">Para encerrar: feche as janelas pretas. O simulador calcula tempo e fluxo; não calcula resistência de peça nem de estrutura. O relatório é um estudo técnico, não um laudo de engenharia.</p>
+</main>
+<script>
+(async () => {                    // o CLP de mentira está respondendo? (pela ponte do próprio servidor, só leitura)
+  const e = document.getElementById("clp"), t = document.getElementById("clpTxt");
+  try {
+    const r = await fetch("/api/clp-de-mentira"); const j = await r.json();
+    e.className = "estado " + (j.ok ? "ok" : "nao"); t.textContent = j.ok ? "CLP de mentira ligado neste PC (127.0.0.1)" : "CLP de mentira desligado — o “Ao vivo” não vai ter leitura";
+  } catch { e.className = "estado nao"; t.textContent = "servidor não respondeu"; }
+})();
+</script>
+</body>
+</html>
